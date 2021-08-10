@@ -563,7 +563,6 @@ grey{
 }
 .news_card > div:last-child img{
   width: 100%;
-  height: 60%;
   object-fit: cover;
   transform: scale(1);
   transform-origin: 50% 0%;

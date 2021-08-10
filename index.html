@@ -12,18 +12,20 @@
   
   <body>
     <main>
-      <div class="site_background hidden"></div>
-      
       <div id="navbar">
         <a href="" id="logo" title="Wilderzone Live"><img src="assets/images/ta.webp" draggable="false" alt="site logo"><div class="title">WL</div></a>
         <div id="navlinks">
           <a href="#home"><p>Home</p><div></div></a>
-          <a href="#"><p>Videos</p><div></div></a>
-          <a href="#"><p>Tournaments</p><div></div></a>
-          <a href="#"><p>Servers</p><div></div></a>
-          <a href="#"><p>Info</p><div></div></a>
+          <a href="#stats"><p>Stats</p><div></div></a>
+          <a href="#videos"><p>Videos</p><div></div></a>
+          <a href="#tournaments"><p>Tournaments</p><div></div></a>
+          <a href="#tamods"><p>TA&nbsp;Mods</p><div></div></a>
+          <a href="#newmaps"><p>New&nbsp;Maps</p><div></div></a>
+          <a href="#servers"><p>Servers</p><div></div></a>
+          <a href="#info"><p>Info</p><div></div></a>
         </div>
         <img id="mobile-navmenu-open" src="assets/icons/menu_white_24dp.svg" draggable="false" alt="" onclick="toggleMobileNav(event);">
+        <span class="navbar_splash"><img src="assets/images/navbar_splash.webp" draggable="false" alt=""></span>
       </div>
       <div id="mobile-navmenu" class="hidden" onclick="toggleMobileNav(event);">
         <div id="mobile-navmenuInner">
@@ -40,75 +42,193 @@
       
       
       <div id="page_content">
-        <div class="content_item large_content_item">
+        <div id="home" class="content_item large_content_item">
           <div class="content_item_image content_item_image_left carousel">
-            <img src="assets/images/raindance-1.jpg" draggable="false" class="visible" style="z-index:0;">
-            <img src="assets/images/crossfire-1.jpg" draggable="false" class="invisible" style="z-index:1;">
-            <img src="assets/images/arx_novena-1.jpg" draggable="false" class="invisible" style="z-index:2;">
-            <img src="assets/images/katabatic-1.jpg" draggable="false" class="invisible" style="z-index:3;">
+            <img src="assets/images/raindance-1.webp" draggable="false" class="visible" style="z-index:0;">
+            <img src="assets/images/crossfire-1.webp" draggable="false" class="invisible" style="z-index:1;">
+            <img src="assets/images/arx_novena-1.webp" draggable="false" class="invisible" style="z-index:2;">
+            <img src="assets/images/katabatic-1.webp" draggable="false" class="invisible" style="z-index:3;">
           </div>
           <div class="content_item_info content_item_info_right">
             <div>
-              <h1>Welcome to Wilderzone Live!</h1>
-              <p>Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka. Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka.</p>
+              <h1 class="home_title">💥 <black>Welcome to </black>Wilderzone Live!</h1>
+              <h3><black>The hub for all things Tribes: Ascend</black></h3>
+              <p>News, Stats, Tournaments, Highlights, and useful community Info - all in one place.</p>
+              <h2>News</h2>
+              <div class="content_item_news">
+                <div>
+                  <div class="news_card">
+                    <div>
+                      <h2>Wilderzone Servers Portal</h2>
+                      <h4>11 Aug 2021</h4>
+                      <p>This project has been in the works for a long time, and now it's finally here. Introducing Wilderzone Servers - allowing you to easily check who's online and what servers are active.</p>
+                    </div>
+                    <div>
+                      <a href="" target="_blank" class="content_item_external_link"><p>View</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+                    </div>
+                    <div>
+                      <img src="assets/news/2021-08-11 - Wilderzone Servers.webp" draggable="false">
+                    </div>
+                  </div>
+                  <div class="news_card">
+                    <div>
+                      <h2>New Wilderzone Live Website</h2>
+                      <h4>10 Aug 2021</h4>
+                      <p>Phew! A fresh new look with a much better purpose. Welcome to the new and improved Wilderzone Live. Thanks to everyone for your patience :)</p>
+                    </div>
+                    <div>
+                      <a href="" target="_blank" class="content_item_external_link"><p>View</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+                    </div>
+                    <div>
+                      <img src="assets/news/2021-08-10 - New WL Site.webp" draggable="false">
+                    </div>
+                  </div>
+                  <div class="news_card">
+                    <div>
+                      <h2>UAE Ascension Tournament Results</h2>
+                      <h4>05 July 2021</h4>
+                      <p>With the completion of the first tournament in the UAE Alpha Circuit, the results are now live!</p>
+                    </div>
+                    <div>
+                      <a href="https://tournaments.wilderzone.live/" target="_blank" class="content_item_external_link"><p>View</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+                    </div>
+                    <div>
+                      <img src="assets/news/UAE_Spring_Ascension_2021_poster.webp" draggable="false">
+                    </div>
+                  </div>
+                  <div class="news_card">
+                    <div>
+                      <h2>Launcher Update</h2>
+                      <h4>28 May 2021</h4>
+                      <p>The TA Mods team has been hard at work, and this Friday they released TLS version 2.0.0! This version now includes a built-in package downloader for downloading new maps and assets.</p>
+                    </div>
+                    <div>
+                      <a href="https://github.com/mcoot/TribesLauncherSharp/releases/tag/2.0.0" target="_blank" class="content_item_external_link"><p>View</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+                    </div>
+                    <div>
+                      <img src="assets/news/2021-05-28 - TA Mods Update.webp" draggable="false">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         
-        <div class="content_item">
+        <div id="stats" class="content_item">
           <div class="content_item_info content_item_info_left">
             <div>
-              <h1>Community Videos</h1>
-              <p>Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka. Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka.</p>
+              <h1>Player Stats</h1>
+              <p>Player and team stats coming soon...</p>
+              <a href="" target="_blank" class="content_item_external_link noclick"><img src="" draggable="false" class="hidden"><p>Coming&nbsp;Soon...</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false" class="hidden"></a>
             </div>
           </div>
           <div class="content_item_image content_item_image_right carousel">
+            <img src="assets/images/stats-1.webp" draggable="false" class="visible" style="z-index:0;">
+            <img src="assets/images/stats-2.webp" draggable="false" class="invisible" style="z-index:1;">
+          </div>
+        </div>
+        
+        <div id="videos" class="content_item">
+          <div class="content_item_image content_item_image_left carousel">
             <img src="https://tournaments.wilderzone.live/assets/images/pic-1.webp" draggable="false" class="visible" style="z-index:0;">
             <img src="https://tournaments.wilderzone.live/assets/images/iced and wb vs khorgaar.webp" draggable="false" class="invisible" style="z-index:1;">
             <img src="https://tournaments.wilderzone.live/assets/images/pic-2.png" draggable="false" class="invisible" style="z-index:2;">
             <img src="https://tournaments.wilderzone.live/assets/images/pic-3.png" draggable="false" class="invisible" style="z-index:3;">
           </div>
+          <div class="content_item_info content_item_info_right">
+            <div>
+              <h1>Community Videos</h1>
+              <p>Highlights, montages, routes, tutorials, and other videos from the community. Coming soon...</p>
+              <a href="" target="_blank" class="content_item_external_link noclick"><img src="" draggable="false" class="hidden"><p>Coming&nbsp;Soon...</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false" class="hidden"></a>
+            </div>
+          </div>
         </div>
         
-        <div class="content_item">
-          <div class="content_item_image content_item_image_left carousel">
+        <div id="tournaments" class="content_item">
+          <div class="content_item_info content_item_info_left">
+            <div>
+              <h1>Tournaments</h1>
+              <p>Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka. Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka.</p>
+              <a href="https://tournaments.wilderzone.live/" target="_blank" class="content_item_external_link"><img src="https://tournaments.wilderzone.live/assets/icons/United_Anarchy_Enterprises_Logo_3_B_small.png" draggable="false"><p>Wilderzone&nbsp;Tournaments</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+            </div>
+          </div>
+          <div class="content_item_image content_item_image_right carousel">
             <img src="https://tournaments.wilderzone.live/assets/images/UAE_Spring_Ascension_2021_BG.webp" draggable="false" class="visible" style="z-index:0;">
             <img src="https://tournaments.wilderzone.live/assets/images/UAE_Spring_Ascension_2021_BG.webp" draggable="false" class="invisible" style="z-index:1;">
             <img src="https://tournaments.wilderzone.live/assets/images/UAE_Summer_Phoenix_2021_BG.webp" draggable="false" class="invisible" style="z-index:2;">
             <img src="https://tournaments.wilderzone.live/assets/images/UAE_Summer_Phoenix_2021_BG.webp" draggable="false" class="invisible" style="z-index:3;">
           </div>
+        </div>
+        
+        <div id="tamods" class="content_item">
+          <div class="content_item_info content_item_info_left">
+            <div>
+              <h1>TA Mods & TAAGC</h1>
+              <p>Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka. Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka.</p>
+              <a href="https://www.tamods.org/" target="_blank" class="content_item_external_link"><img src="https://www.tamods.org/img/favicon.png" draggable="false"><p>TA&nbsp;Mods</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+              <a href="" target="_blank" class="content_item_external_link"><img src="assets/images/taagc.webp" draggable="false"><p>TAAGC</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+            </div>
+          </div>
+          <div class="content_item_image content_item_image_right carousel">
+            <img src="assets/images/tamods-1.webp" draggable="false" class="visible" style="z-index:0;">
+            <img src="assets/images/tamods-2.webp" draggable="false" class="invisible" style="z-index:1;">
+            <img src="assets/images/tamods-3.webp" draggable="false" class="invisible" style="z-index:2;">
+          </div>
+        </div>
+        
+        <div id="newmaps" class="content_item">
+          <div class="content_item_image content_item_image_left carousel">
+            <img src="https://www.dodgesdomain.com/assets/images/incidamus-mid-50b19267fa2ada2936072729dc38716f.png" draggable="false" class="visible" style="z-index:0;">
+            <img src="https://www.dodgesdomain.com/assets/images/incidamus-features-aa39e684327b4c98c21ba83c04c99a63.png" draggable="false" class="invisible" style="z-index:1;">
+            <img src="https://www.dodgesdomain.com/assets/images/blues-right-fe2862a323c6baccde1e700f37d9f8c5.png" draggable="false" class="invisible" style="z-index:2;">
+            <img src="https://www.dodgesdomain.com/assets/images/blues-flagstand-3686a3b493aaab13e591adfe5125f451.png" draggable="false" class="invisible" style="z-index:3;">
+            <img src="https://www.dodgesdomain.com/assets/images/periculo-shot-91efae31eb8330b34c49f9ffb2c8dacb.png" draggable="false" class="invisible" style="z-index:4;">
+            <img src="https://www.dodgesdomain.com/assets/images/periculo-caves-features-3421a129779b340e7e9fc7ce10049c7b.png" draggable="false" class="invisible" style="z-index:5;">
+          </div>
           <div class="content_item_info content_item_info_right">
             <div>
-              <h1>Tournaments</h1>
+              <h1>New Maps</h1>
               <p>Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka. Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka.</p>
+              <a href="https://www.dodgesdomain.com/docs/how-to-install#playing-community-maps" target="_blank" class="content_item_external_link"><img src="https://wilderzone.live/assets/images/combat_blueplatespecial.webp" draggable="false"><p>Installing&nbsp;New&nbsp;Maps</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
             </div>
           </div>
         </div>
         
-        <div class="content_item">
+        <div id="servers" class="content_item">
           <div class="content_item_info content_item_info_left">
             <div>
               <h1>Servers</h1>
               <p>See who's online and what servers are active with the Wilderzone Servers portal.</p>
               <p></p>
+              <a href="https://servers.wilderzone.live/" target="_blank" class="content_item_external_link"><img src="https://servers.wilderzone.live/icons/dns_black_24dp.svg" draggable="false"><p>Wilderzone&nbsp;Servers</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
             </div>
           </div>
           <div class="content_item_image content_item_image_right carousel">
-            <img src="assets/images/wilderzone_servers.png" draggable="false" class="visible" style="z-index:0;">
+            <img src="assets/images/wilderzone_servers.webp" draggable="false" class="visible" style="z-index:0;">
           </div>
         </div>
         
-        <div class="content_item">
+        <div id="info" class="content_item">
           <div class="content_item_image content_item_image_left carousel">
-            <img src="assets/images/raindance-1.jpg" draggable="false" class="visible" style="z-index:0;">
-            <img src="assets/images/crossfire-1.jpg" draggable="false" class="invisible" style="z-index:1;">
-            <img src="assets/images/arx_novena-1.jpg" draggable="false" class="invisible" style="z-index:2;">
-            <img src="assets/images/katabatic-1.jpg" draggable="false" class="invisible" style="z-index:3;">
+            <img src="assets/images/raindance-1.webp" draggable="false" class="visible" style="z-index:0;">
+            <img src="assets/images/crossfire-1.webp" draggable="false" class="invisible" style="z-index:1;">
+            <img src="assets/images/arx_novena-1.webp" draggable="false" class="invisible" style="z-index:2;">
+            <img src="assets/images/katabatic-1.webp" draggable="false" class="invisible" style="z-index:3;">
           </div>
           <div class="content_item_info content_item_info_right">
             <div>
               <h1>Info</h1>
-              <p>Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka. Thasdlas dajsdh a dwda shd dfdfh sehfsdhf slhefs dfles hk fsdhkaf sdf kkse faks dhkfa sk hekfhuehfks vbaka ca sdbcuiebca sdubcasjdbshdf dj afsdb faksdf shdkac eka bsdkcbskdbc kaecbu aksdubcaksjdbfhdbfka ckas dh aksdc sdcb aksdbfkabd cka.</p>
+              <p>This website was made and is maintained by Gigabyte5671 (Giga), in the hopes that it can bring at least a little bit more life to the Tribes: Ascend community. Many thanks to Griffon26, Chicken, Karu, mcoot, Kalila, and the countless other people in the Tribes Ascend Community Hub without whom this game would likely be dead.</p>
+              <p><img src="assets/icons/heart-24px.svg" draggable="false"></p>
+              <p>Here are some useful links:</p>
+              <div style="flex-direction:row;flex-wrap:wrap;width:calc(100% - 17%);max-width:calc(100% - 17%);">
+                <a href="https://store.steampowered.com/app/17080/Tribes_Ascend/" target="_blank" class="content_item_external_link"><p>Steam&nbsp;Page</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+                <a href="https://www.reddit.com/r/Tribes/" target="_blank" class="content_item_external_link"><p>Subreddit</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+                <a href="https://www.tribesuniverse.com/" target="_blank" class="content_item_external_link"><p>Tribes&nbsp;Universe</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+                <a href="https://tribes.fandom.com/wiki/Backstory_timeline" target="_blank" class="content_item_external_link"><p>Tribes&nbsp;Lore</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+                <a href="https://web.archive.org/web/20160321145447/http://www.wilderzone.org/" target="_blank" class="content_item_external_link"><p>Original&nbsp;Wilderzone.org</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+              </div>
             </div>
           </div>
         </div>

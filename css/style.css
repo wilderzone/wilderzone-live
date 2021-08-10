@@ -348,7 +348,7 @@ grey{
   max-height: 100%;
   background-color: white;
 }
-.content_item_info::before{
+.content_item_info > span{
   content: "";
   position: absolute;
   z-index: 0;
@@ -456,6 +456,8 @@ grey{
   height: 100%;
   min-height: 100%;
   background-color: var(--secondary_grey);
+  
+  display: none;
 }
 .content_item_news::after{
   content: "";

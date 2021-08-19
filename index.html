@@ -56,7 +56,7 @@
               <h3><black>The hub for all things Tribes: Ascend</black></h3>
               <p>News, Stats, Tournaments, Highlights, and useful community Info - all in one place.</p>
               <h2><white>News</white></h2>
-              <div class="content_item_news">
+              <div class="inset_section">
                 <div>
                   <div class="news_card">
                     <div>
@@ -121,7 +121,7 @@
             <span></span>
             <div>
               <h1>Player Stats</h1>
-              <p>Player and team stats coming soon...</p>
+              <p>Player and team stats coming soon... Hold tight!</p>
               <a href="" target="_blank" class="content_item_external_link noclick"><img src="" draggable="false" class="hidden"><p>Coming&nbsp;Soon...</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false" class="hidden"></a>
             </div>
           </div>
@@ -142,8 +142,12 @@
             <span></span>
             <div>
               <h1>Community Videos</h1>
-              <p>Highlights, montages, routes, tutorials, and other videos from the community. Coming soon...</p>
-              <a href="" target="_blank" class="content_item_external_link noclick"><img src="" draggable="false" class="hidden"><p>Coming&nbsp;Soon...</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false" class="hidden"></a>
+              <p>Recent highlights, montages, routes, tutorials, and other videos from the community.</p>
+              <div class="inset_section">
+                <div id="community_videos_container">
+                  <!--Generated Content Goes Here-->
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -227,7 +231,7 @@
               <h1>Servers</h1>
               <p>See who's online and what servers are active with the Wilderzone Servers portal.</p>
               <p></p>
-              <a href="https://servers.wilderzone.live/" target="_blank" class="content_item_external_link"><img src="https://servers.wilderzone.live/icons/dns_black_24dp.svg" draggable="false"><p>Wilderzone&nbsp;Servers</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
+              <a href="https://servers.wilderzone.live/" target="_blank" class="content_item_external_link"><img src="https://servers.wilderzone.live/assets/icons/dns_black_24dp.svg" draggable="false"><p>Wilderzone&nbsp;Servers</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
             </div>
           </div>
           <div class="content_item_image content_item_image_right carousel">
@@ -272,8 +276,7 @@
   <script>
     function doCarousels(){
       var i = 0;
-      while(i < $(".carousel").length){3
-        console.log($($(".carousel")[i]).children().filter(".visible").prevAll().length);
+      while(i < $(".carousel").length){
         var p = $($(".carousel")[i]).children().filter(".visible").prevAll().length;
         
         if(p < ($($(".carousel")[i]).children().length - 1)){
@@ -294,5 +297,83 @@
     }
     
     setInterval(function(){doCarousels()}, 7000);
+  </script>
+  <script>
+    var community_videos;
+    $.ajax({
+      dataType:"json",
+      url:"assets/data/community_videos.json",
+      cache:false,
+      success:function(community_videos_data){
+        community_videos = community_videos_data;
+        loadMoreCommunityVideos(4);
+      },
+      error:function(xhr, status, err){
+        console.log("Error " + xhr.status);
+        loadMoreCommunityVideosError();
+      }
+    });
+    
+    function loadMoreCommunityVideos(numberToLoad){
+      $(".video_load_more_card").remove();
+      var totalCommunityVideosShown = $("#community_videos_container").children().length;
+      var t = totalCommunityVideosShown;
+      
+      var totalCommunityVideos = 0;
+      Object.keys(community_videos).forEach(function(k){
+        totalCommunityVideos++;
+      });
+      
+      var i = 0;
+      Object.keys(community_videos).forEach(function(k){
+        if(i >= t && i < numberToLoad + t){
+          var tags = community_videos[k]["tags"].split(",");
+          var tags2 = "";
+          tags.forEach(function(s){
+            tags2 += '<p title="' + s + '">' + s + '</p>';
+          });
+          
+          var item = '<div class="video_card">'
+                   +   '<iframe src="https://www.youtube-nocookie.com/embed/' + community_videos[k]["url"] + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+                   +   '<div title="Video by ' + community_videos[k]["author"] + " | " + toSpokenDate(community_videos[k]["date"]) + '">'
+                   +     '<h2>' + community_videos[k]["author"] + '</h2>'
+                   +     '<h4>' + toSpokenDate(community_videos[k]["date"]) + '</h4>'
+                   +   '</div>'
+                   +   '<div title="Video tags: ' + community_videos[k]["tags"].split(",").join(", ") + '">'
+                   +     tags2
+                   +   '</div>'
+                   + '</div>';
+          
+          $("#community_videos_container").append(item);
+        }
+        i++;
+      });
+      
+      var item = '<div class="video_card video_load_more_card" title="Click to load more videos." onclick="loadMoreCommunityVideos(4)">'
+               +   '<p>Load more...</p><img src="assets/icons/arrow_forward_white_24dp.svg" draggable="false">'
+               + '</div>';
+      
+      if(totalCommunityVideosShown >= totalCommunityVideos){
+      }else{
+        $("#community_videos_container").append(item);
+      }
+    }
+  </script>
+  <script>
+    function toSpokenDate(date){
+      var ordinals = ["th", "st", "nd", "rd"];
+      var months = ["","Jan","Feb","Mar","Apr","May","Jun","July","Aug","Sep","Oct","Nov","Dec"];
+      var spokenDate = parseInt(date.split("/")[2]);
+      
+      if(parseInt(date.split("/")[2][1]) >= 1 && parseInt(date.split("/")[2][1]) <= 3 && parseInt(date.split("/")[2]) != 11 && parseInt(date.split("/")[2]) != 12 && parseInt(date.split("/")[2]) != 13){
+        spokenDate += ordinals[parseInt(date.split("/")[2][1])];
+      }else{
+        spokenDate += ordinals[0];
+      }
+      
+      spokenDate += " " + months[parseInt(date.split("/")[1])] + " " + date.split("/")[0];
+      
+      return spokenDate;
+    }
   </script>
 </html>

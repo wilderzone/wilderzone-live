@@ -604,6 +604,18 @@ grey{
   transform: scale(0.5);
   transform-origin: 0% 0%;
 }
+.video_card > img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: 0.2s ease transform;
+}
+.video_card:hover > img{
+  transform: scale(1.1);
+}
 .video_card > div:nth-child(2){
   position: absolute;
   z-index: 2;
@@ -622,6 +634,9 @@ grey{
   /*clip-path: polygon(0% 0%, calc(100% - 15px) 0%, 100% 50%, calc(100% - 15px) 100%, 0% 100%);*/
   user-select: none;
 }
+.video_card:hover > div:nth-child(2){
+  transform: translateX(-110%);
+}
 .video_card > div:nth-child(3){
   position: absolute;
   z-index: 2;
@@ -637,8 +652,13 @@ grey{
   background-color: var(--glass_background_color);
   backdrop-filter: blur(5px);
   box-shadow: 0px 0px 4px black;
-  transition: 0.2s ease transform;
+  opacity: 1;
+  transition: 0.2s ease all;
   user-select: none;
+}
+.video_card:hover > div:nth-child(3){
+  opacity: 0;
+  transform: rotateX(90deg);
 }
 .video_card > div:nth-child(3) p{
   width: min-content;
@@ -660,8 +680,43 @@ grey{
   color: var(--secondary_grey);
   font-size: 12px;
 }
-.video_card iframe:focus + div{
-  transform: translateX(-100%);
+.video_card > a{
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/icons/launch_white_24dp.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+  opacity: 0.8;
+  transition: 0.1s ease opacity;
+}
+.video_card > a:hover{
+  opacity: 1;
+}
+.video_card > img:nth-child(4){
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 40px);
+  right: 32px;
+  width: 80px;
+  height: 80px;
+  min-height: 80px;
+  max-height: 80px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 4px black;
+  opacity: 1;
+  transition: 0.2s ease opacity;
+  user-select: none;
+  pointer-events: none;
+}
+.video_card:hover > img:nth-child(4){
+  opacity: 0;
+  transform: scale(1);
 }
 .video_load_more_card{
   position: relative;

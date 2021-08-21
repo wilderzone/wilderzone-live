@@ -346,10 +346,13 @@
     }
     
     function setActiveNav(){
+      var current_page = getCurrentPage();
       $("#navlinks").children().removeClass("active_nav");
-      $("#navlinks").children(":nth-child(" + (getCurrentPage() + 1) + ")").addClass("active_nav");
+      $("#navlinks").children(":nth-child(" + (current_page + 1) + ")").addClass("active_nav");
       $("#page_content").children().removeClass("active_content_item");
-      $("#page_content").children(":nth-child(" + (getCurrentPage() + 1) + ")").addClass("active_content_item");
+      $("#page_content").children(":nth-child(" + (current_page + 1) + ")").addClass("active_content_item");
+      
+      $("title").html((current_page != 0 ? $("#navlinks").children(":nth-child(" + (current_page + 1) + ")").children().first().html() + " | Wilderzone Live" : "Wilderzone Live"));
     }
     setActiveNav();
     $(document).on("scroll",function(){setActiveNav()})

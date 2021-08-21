@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Wilderzone Live</title>
+    <meta name="author" content="Gigabyte5671">
+    <meta name="theme-color" content="#FFFFFF">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="style.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,700&display=swap');</style>
+    <link rel="shortcut icon" href="assets/images/ta.webp">
+  </head>
+  
+  <body>
+    <main>
+      <div id="nav">
+        <div>
+        </div>
+      </div>
+      <div id="gallery">
+      </div>
+    </main>
+  </body>
+  
+  <script src="../lib/jquery.min.js"></script>
+  <script src="../lib/toSpokenDate.js"></script>
+  <script>
+    var gallery_db;
+    $.ajax({
+      dataType:"json",
+      url:"gallery_db.json",
+      cache:false,
+      success:function(gallery_data){
+        gallery_db = gallery_data;
+        populateGallery();
+      },
+      error:function(xhr, status, err){
+        console.log("Error " + xhr.status);
+        populateGalleryError();
+      }
+    });
+    
+    function populateGallery(){
+      var i = 0;
+      while(i < gallery_db["images"].length){
+        var item = '<div>'
+                 +   '<img src="' + gallery_db["images"][i][0] + '" draggable="true">'
+                 +   '<div>'
+                 +     (gallery_db["images"][i][1] == "" ? '' : '<p>Image by ' + gallery_db["images"][i][1] + '</p>')
+                 +     (gallery_db["images"][i][2] == "" ? '' : '<p>Date: ' + toSpokenDate(gallery_db["images"][i][2]) + '</p>')
+                 +   '</div>'
+                 + '</div>';
+        
+        $("#gallery").append(item);
+        i++;
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,32 @@
+main{
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+#nav{
+  
+}
+
+#gallery{
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 95%;
+  
+}
+#gallery div{
+  display: inline-block;
+  border-radius: var(--small_border_radius);
+  overflow: hidden;
+  cursor: pointer;
+}
+#gallery div img{
+  width: 50%;
+}
+#gallery div div{
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#gallery div p{
+  color: black;
+  font-size: 12px;
+}

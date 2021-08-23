@@ -789,11 +789,6 @@ footer img{
   margin: 1px 0px 0px 3px;
 }
 
-@keyframes a_info_image_rotate{
-  0%   {transform: scale(2) rotate(0deg);}
-  100% {transform: scale(2) rotate(-360deg);}
-}
-
 /*=============IMPORTANT============*/
 .round{
   border-radius: 50% !important;

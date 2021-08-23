@@ -1,0 +1,21 @@
+:root{
+  --anim_duration_fast: 0.1s;
+  --anim_duration_short: 0.2s;
+  --anim_duration_medium: 0.7s;
+  --anim_duration_long: 2s;
+}
+/*============ANIMATIONS============*/
+.a_fade_up{
+  animation: var(--anim_duration_medium) ease a_fade_up forwards;
+}
+@keyframes a_fade_up{
+  0%   {opacity: 0;
+        transform: translateY(100px);}
+  100% {opacity: 1;
+        transform: translateY(0px);}
+}
+
+@keyframes a_info_image_rotate{
+  0%   {transform: scale(2) rotate(0deg);}
+  100% {transform: scale(2) rotate(-360deg);}
+}

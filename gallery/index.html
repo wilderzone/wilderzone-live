@@ -45,7 +45,9 @@
       Object.keys(gallery_db["images"]).forEach(function(k){
         if($("#" + k.toUpperCase())[0] == null){
           var item = '<div id="' + k.toUpperCase() + '" class="gallery_section">'
-                   +   '<img src="data:image/svg+xml;utf8,' + "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='31px'><text x='0' y='30' fill='black' font-size='40px' font-weight='600' text-anchor='end' transform='rotate(-90)' opacity='0.9' font-family='Roobert,Helvetica Neue,Helvetica,Arial,sans-serif'>" + k.toUpperCase() + "</text></svg>" + '" draggable="false">'
+                   +   '<div class="gallery_section_title">'
+                   +     '<img src="data:image/svg+xml;utf8,' + "<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='31' height='" + (k.length * 29) + "'><text x='0' y='30' display='block' fill='black' font-size='40px' font-weight='600' text-anchor='end' transform='rotate(-90)' opacity='0.9' font-family='Roobert,Helvetica Neue,Helvetica,Arial,sans-serif'>" + k.toUpperCase() + "</text></svg>" + '" draggable="false">'
+                   +   '</div>'
                    +   '<div class="gallery_section_inner"></div>'
                    + '</div>';
           $("#gallery").append(item);
@@ -55,19 +57,20 @@
         while(i < gallery_db["images"][k].length){
           var name = gallery_db["images"][k][i][0].split("/")[gallery_db["images"][k][i][0].split("/").length - 1];
           var extension = name.split(".")[1];
+          var alternate = gallery_db["images"][k][i][1];
           name = name.split(".")[0];
-          var size = gallery_db["images"][k][i][1];
+          var size = gallery_db["images"][k][i][2];
           
           var item = '<div class="gallery_item">'
-                   +   '<div class="gallery_item_inner" style="background-image:url(' + "'" + gallery_db["images"][k][i][0] + "'" + ');background-size:' + gallery_db["images"][k][i][2] + ';">'
+                   +   '<div class="gallery_item_inner" style="background-image:url(' + "'" + gallery_db["images"][k][i][0] + "'" + ');background-size:' + gallery_db["images"][k][i][3] + ';">'
                    +     '<div class="gallery_item_info">'
                    +       '<div>'
-                   +         '<p style="font-weight:bold;">' + name + '</p>' //name
+                   +         '<p style="font-weight:bold;" title="' + name + '">' + name + '</p>' //name
                    //+         (gallery_db["images"][k][i][1] == "" ? '' : '<p>Image&nbsp;by&nbsp;' + gallery_db["images"][k][i][1] + '</p>')
                    +       '</div>'
                    +       '<div>'
                    +         '<p style="width:9ch;min-width:9ch;max-width:9ch;overflow:hidden;">' + size + '</p>' //size
-                   +         '<p>' + extension + '</p>' //extension
+                   +         '<p>' + alternate + '</p>' //extension
                    +         '<img src="../assets/icons/download_black_24dp.svg" draggable="false" title="Download">' //dload link
                    +       '</div>'
                    +     '</div>'

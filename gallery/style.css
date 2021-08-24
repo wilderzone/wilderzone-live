@@ -1,7 +1,11 @@
 :root{
+  --section_separation: 20px;
   --item_size: 160px;
 }
 
+body{
+  background: var(--secondary_grey);
+}
 main{
   flex-direction: row;
   flex-wrap: nowrap;
@@ -18,6 +22,15 @@ main{
 .gallery_section{
   flex-direction: row;
   width: 100%;
+  height: calc(var(--item_size) + 30px);
+  min-height: calc(var(--item_size) + 30px);
+  max-height: calc(var(--item_size) + 30px);
+  margin: var(--section_separation) 0px 0px 0px;
+}
+.gallery_section_title{
+  width: 42px;
+  min-width: 42px;
+  max-width: 42px;
 }
 .gallery_section_inner{
   flex-direction: row;

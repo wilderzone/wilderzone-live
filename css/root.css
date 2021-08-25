@@ -122,3 +122,34 @@ grey{
   display: contents;
   color: grey;
 }
+
+#page_content{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: var(--nav_height);
+}
+
+/*=============IMPORTANT============*/
+.round{
+  border-radius: 50% !important;
+}
+.nobefore::before{
+  display: none !important;
+}
+.noafter::after{
+  display: none !important;
+}
+.noclick{
+  user-select: none !important;
+  pointer-events: none !important;
+}
+.invisible{
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.hidden{
+  display: none !important;
+}
+}

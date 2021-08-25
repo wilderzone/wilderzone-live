@@ -44,10 +44,6 @@
 #logo:hover{
   background-color:  var(--primary_color);
 }
-#logo:hover img{
-  background-color:  var(--primary_color);
-  border: 3px solid var(--primary_color);
-}
 #logo img{
   width: 55px;
   height: 55px;
@@ -57,6 +53,10 @@
   border-radius: 50%;
   box-shadow: 0px 0px 5px black;
   transition: 0.1s ease all;
+}
+#logo:hover img{
+  background-color:  var(--primary_color);
+  border: 3px solid var(--primary_color);
 }
 #logo .title{
   margin-top: -7px;
@@ -111,6 +111,31 @@
 }
 #navlinks .active_nav div{
   width: 100%;
+}
+
+.simple_navbar #logo{
+  width: 100%;
+  margin-right: 0px;
+  clip-path: unset;
+}
+.simple_navbar #logo img{
+  width: 38px;
+  height: 38px;
+  margin: 2px 10px 0px 10px;
+  padding: unset;
+  border: unset;
+  border-radius: unset;
+  box-shadow: unset;
+}
+.simple_navbar #logo .title{
+  display: inline-block;
+  vertical-align: top;
+  margin: 4px 0px 0px 0px;
+  color: white;
+  font-size: 24px;
+}
+.simple_navbar #navlinks{
+  display: none;
 }
 
 #mobile-navmenu-open{
@@ -186,13 +211,6 @@
 
 
 /*=============ELEMENTS=============*/
-#page_content{
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: var(--nav_height);
-}
 .content_item{
   position: relative;
   flex-direction: row;
@@ -787,28 +805,6 @@ footer p{
 footer img{
   width: 16px;
   margin: 1px 0px 0px 3px;
-}
-
-/*=============IMPORTANT============*/
-.round{
-  border-radius: 50% !important;
-}
-.nobefore::before{
-  display: none !important;
-}
-.noafter::after{
-  display: none !important;
-}
-.noclick{
-  user-select: none !important;
-  pointer-events: none !important;
-}
-.invisible{
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-.hidden{
-  display: none !important;
 }
 
 /*============RESPONSIVE============*/

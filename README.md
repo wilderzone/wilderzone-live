@@ -14,3 +14,6 @@ Servers: <a href="https://servers.wilderzone.live/" target="_blank" rel="norefer
 Tournaments: <a href="https://tournaments.wilderzone.live/" target="_blank" rel="noreferrer">https://tournaments.wilderzone.live/</a>  
 Gallery: <a href="https://wilderzone.live/gallery/" target="_blank" rel="noreferrer">https://wilderzone.live/gallery/</a>  
 TAAGC: <a href="https://taagc.org/" target="_blank" rel="noreferrer">https://taagc.org/</a>  
+  
+  
+The Wilderzone Live Project was made in the hopes that it can bring at least a little bit more life to the Tribes: Ascend community. Many many thanks to all those who have supported my efforts with this project.

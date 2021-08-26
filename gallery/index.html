@@ -30,12 +30,22 @@
         <a href="https://wilderzone.live/" id="back_button" title="Back to the homepage."><img src="../assets/icons/reply_white_24dp.svg" draggable="false" alt=""><p>Back</p></a>
       </div>
       <div id="page_content">
-        <p style="align-self:flex-start;margin:-20px 0px 20px 38px;">Images from the game and the community.</p>
+        <p style="align-self:flex-start;margin:-20px 0px 20px 38px;color:var(--primary_color);">Images from the game and the community.</p>
         <div id="gallery">
         </div>
         <div id="gallery_modal" class="invisible noclick">
-          <div class="gallery_modal_close_button" title="Close" onclick="closeModalImage()"></div>
+          <div class="gallery_modal_close_button" title="Close" onclick="closeModal('#gallery_modal')"></div>
           <img src="" draggable="true">
+          <div class="gallery_modal_info">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+        <div id="info_modal" class="invisible noclick">
+          <div class="gallery_modal_close_button" title="Close" onclick="closeModal('#info_modal')"></div>
           <div class="gallery_modal_info">
             <p></p>
             <p></p>
@@ -96,8 +106,8 @@
           
           var item = '<div class="gallery_item">'
                    +   '<div class="gallery_item_buttons">'
-                   +     '<div class="gallery_item_zoom_button" title="View in fullscreen" onclick="openModalImage(event)"></div>'
-                   +     '<div class="gallery_item_info_button" title="Information" onclick="openModalInfo(event)"><p>i</p></div>'
+                   +     '<div class="gallery_item_zoom_button" title="View in fullscreen" onclick="openModal(event, ' + "'#gallery_modal'" + ')"></div>'
+                   +     '<div class="gallery_item_info_button" title="Information" onclick="openModal(event, ' + "'#info_modal'" + ')"><p>i</p></div>'
                    +     '<div class="gallery_item_dload_button" title="Download" onclick="downloadImage(event)"></div>'
                    +   '</div>'
                    +   '<div class="gallery_item_inner" style="background-image:url(' + "'" + url + "'" + ');background-size:' + fit + ';">'
@@ -124,10 +134,12 @@
     }
   </script>
   <script>
-    function openModalImage(event){
-      var image_url = $(event.target).parent().parent().children(":nth-child(2)").css("background-image");
-      image_url = image_url.toString().substring(5, image_url.length - 2);
-      $("#gallery_modal").children(":nth-child(2)").attr("src", image_url);
+    function openModal(event, modal){
+      if(modal == "#gallery_modal"){
+        var image_url = $(event.target).parent().parent().children(":nth-child(2)").css("background-image");
+        image_url = image_url.toString().substring(5, image_url.length - 2);
+        $("#gallery_modal").children(":nth-child(2)").attr("src", image_url);
+      }
       var image_name = $(event.target).parent().parent().children(":nth-child(2)").children(":nth-child(1)").children(":nth-child(1)").html(); //name
       $(".gallery_modal_info").children(":nth-child(1)").html('<b>' + spaceToNBSP(image_name) + '</b>');
       var image_author = $(event.target).parent().parent().children(":nth-child(2)").children(":nth-child(1)").children(":nth-child(2)").html(); //author
@@ -140,19 +152,20 @@
       $(".gallery_modal_info").children(":nth-child(5)").html(spaceToNBSP("&middot; " + image_alternate));
       
       $("body").css({"overflow-y":"hidden"});
-      $("#gallery_modal").removeClass("invisible");
-      $("#gallery_modal").removeClass("noclick");
+      $(modal).removeClass("invisible");
+      $(modal).removeClass("noclick");
     }
-    function closeModalImage(){
-      $("#gallery_modal").addClass("invisible");
-      $("#gallery_modal").addClass("noclick");
+    function closeModal(modal){
+      $(modal).addClass("invisible");
+      $(modal).addClass("noclick");
       $("body").css({"overflow-y":"auto"});
     }
     
     window.addEventListener("keydown", function(event){
       if(event.key == "Escape"){
         event.preventDefault();
-        closeModalImage();
+        closeModal("#gallery_modal");
+        closeModal("#info_modal");
       }
     });
   </script>

@@ -42,7 +42,7 @@
   clip-path: polygon(0% 0%, 100% 0%, 80% 130%, 0% 130%);
 }
 #logo:hover{
-  background-color:  var(--primary_color);
+  background-color: var(--primary_color);
 }
 #logo img{
   width: 55px;
@@ -112,11 +112,42 @@
 #navlinks .active_nav div{
   width: 100%;
 }
+#back_button{
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  padding-right: 20px;
+  background-color:  var(--tertiary_grey);
+  transition: 0.1s ease all;
+}
+#back_button img{
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: unset;
+  opacity: 0.6;
+  transition: 0.1s ease opacity;
+}
+#back_button p{
+  width: min-content;
+  margin: 0px 0px 0px 3px;
+  color: white;
+  opacity: 0.6;
+  transition: 0.1s ease opacity;
+}
+#back_button:hover img, #back_button:hover p{
+  opacity: 1;
+}  
 
 .simple_navbar #logo{
   width: 100%;
   margin-right: 0px;
   clip-path: unset;
+}
+.simple_navbar:hover #logo{
+  background-color: var(--primary_color);
 }
 .simple_navbar #logo img{
   width: 38px;
@@ -127,6 +158,9 @@
   border-radius: unset;
   box-shadow: unset;
 }
+.simple_navbar:hover #logo img{
+  background-color: var(--primary_color);
+}
 .simple_navbar #logo .title{
   display: inline-block;
   vertical-align: top;
@@ -136,6 +170,12 @@
 }
 .simple_navbar #navlinks{
   display: none;
+}
+.simple_navbar #back_button{
+  display: flex;
+}
+.simple_navbar:hover #back_button{
+  background-color: var(--primary_color);
 }
 
 #mobile-navmenu-open{

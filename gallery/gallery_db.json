@@ -161,7 +161,8 @@
       ["../assets/images/accolades/spree_unstoppable.webp","png","115x115","unset","",""]
     ],
     "W-Live": [
-      ["../assets/images/honor_tournament-1.webp","png","1920x1080","cover","Giga","2021"]
+      ["../assets/images/honor_tournament-1.webp","png","1920x1080","cover","Giga","2021"],
+      ["../assets/images/site_cover.webp","png","1920x1080","cover","Giga","2021"]
     ]
   }
 }

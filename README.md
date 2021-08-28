@@ -1,4 +1,4 @@
-<p align="center"><img width="96" src="https://wilderzone.live/assets/images/ta.webp" draggable="false"></p>
+<p align="Left"><img width="96" src="https://wilderzone.live/assets/images/ta.webp" draggable="false"></p>
 
 Wilderzone Live Project
 ========

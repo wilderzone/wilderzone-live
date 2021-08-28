@@ -13,6 +13,7 @@ The site is live here: <a href="https://wilderzone.live/" target="_blank" rel="n
 Servers: <a href="https://servers.wilderzone.live/" target="_blank" rel="noreferrer">https://servers.wilderzone.live/</a>  
 Tournaments: <a href="https://tournaments.wilderzone.live/" target="_blank" rel="noreferrer">https://tournaments.wilderzone.live/</a>  
 Gallery: <a href="https://wilderzone.live/gallery/" target="_blank" rel="noreferrer">https://wilderzone.live/gallery/</a>  
+Notes: <a href="https://wilderzone.live/notes/" target="_blank" rel="noreferrer">https://wilderzone.live/notes/</a>  
 TAAGC: <a href="https://taagc.org/" target="_blank" rel="noreferrer">https://taagc.org/</a>  
   
   

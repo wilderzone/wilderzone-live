@@ -71,6 +71,7 @@
 }
 #navlinks{
   width: 100%;
+  overflow-x: auto;
 }
 #navlinks a{
   flex-direction: column;

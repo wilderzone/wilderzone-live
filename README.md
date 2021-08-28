@@ -1,6 +1,6 @@
 <p align="Left"><img width="96" src="https://wilderzone.live/assets/images/ta.webp" draggable="false"></p>
 
-Wilderzone Live Project
+Wilderzone Live
 ========
 #### The hub for all things Tribes: Ascend ####
   

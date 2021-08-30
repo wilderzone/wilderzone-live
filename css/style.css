@@ -499,6 +499,9 @@
 .news_card:last-child{
   margin: 0px 15px 0px 15px;
 }
+.news_latest{
+  box-shadow: 0px 0px 10px 1px #FFB353;
+}
 .news_card > div:first-child{
   z-index: 2;
   flex-direction: column;

@@ -516,6 +516,8 @@
   background-color: #FFB353;
   border: 2px solid #FFB353;
   border-radius: var(--standard_border_radius);
+  transform: scale(0);
+  animation: var(--anim_duration_short) ease a_pop_in forwards 0.5s;
   user-select: none;
 }
 .news_card_inner{

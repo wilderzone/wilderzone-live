@@ -5,6 +5,13 @@
   --anim_duration_long: 2s;
 }
 /*============ANIMATIONS============*/
+.a_fade_in{
+  animation: var(--anim_duration_medium) ease a_fade_in forwards;
+}
+@keyframes a_fade_in{
+  0%   {opacity: 0;}
+  100% {opacity: 1;}
+}
 .a_fade_up{
   animation: var(--anim_duration_medium) ease a_fade_up forwards;
 }

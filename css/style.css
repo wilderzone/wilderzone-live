@@ -903,6 +903,25 @@ footer img{
     margin: -2px 0px 25px 4px;
   }
 }
+@media only screen and (max-width: 600px){
+  .content_item_image{
+    display: none;
+  }
+  .content_item_info{
+    width: unset;
+    min-width: 100%;
+  }
+  .content_item_info_left{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .content_item_info_right{
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .content_item_splash_overlay{
+    top: -10%;
+    left: 0px;
+    border-radius: 0px;
+}
 @media only screen and (max-width: 562px){
   .content_item_info > div .home_title::before{
     height: calc(3em + 58px);

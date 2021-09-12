@@ -123,6 +123,11 @@ grey{
   color: grey;
 }
 
+light{
+  display: contents;
+  font-weight: 100;
+}
+
 #page_content{
   flex-direction: column;
   justify-content: center;

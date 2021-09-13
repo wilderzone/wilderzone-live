@@ -16,7 +16,7 @@
   position: absolute;
   z-index: -1;
   top: 0px;
-  left: 90px;
+  left: 160px;
   display: block;
   width: 100%;
   height: 100%;
@@ -272,6 +272,33 @@
   /*box-shadow: 0px 0px 10px 5px var(--primary_color);*/
   box-shadow: 0px 0px 7px 0px black;
 }
+.landing_title{
+  position: absolute;
+  top: -7%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 110%;
+  padding: 0px 30px 0px 30px;
+  color: white;
+  box-shadow: 0px 0px 5px black;
+  backdrop-filter: blur(5px);
+}
+.landing_title h1{
+  position: relative;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 48px;
+}
+.landing_title h1::after{
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: white;
+}
 .content_item_image{
   position: relative;
   z-index: 0;
@@ -302,14 +329,14 @@
 }
 .content_item_info{
   z-index: 1;
-  width: calc(65% + 50px);
-  min-width: calc(65% + 50px);
+  min-width: 100%;
   height: 100%;
   min-height: 100%;
   max-height: 100%;
   background-color: white;
   overflow-x: hidden;
   overflow-y: auto;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 /*It would be awesome if this worked, but it kinda doesn't for now...
 
@@ -352,11 +379,15 @@
   display: none;
 }
 .content_item_info_left{
+  width: calc(65% + 50px);
+  min-width: calc(65% + 50px);
   margin: 0px 0px 0px 0px;
   padding: 10px 60px 20px 20px;
   clip-path: polygon(0% 0%, 100% 0%, calc(100% - 50px) 100%, 0% 100%);
 }
 .content_item_info_right{
+  width: calc(65% + 50px);
+  min-width: calc(65% + 50px);
   margin: 0px 0px 0px -50px;
   padding: 10px 20px 20px 70px;
   clip-path: polygon(50px 0%, 100% 0%, 100% 100%, 0% 100%);

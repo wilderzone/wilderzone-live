@@ -36,6 +36,7 @@
         <a href="" id="logo" title="Wilderzone Live"><img src="assets/images/ta.webp" draggable="false" alt="site logo"><div class="title">WL</div></a>
         <div id="navlinks">
           <a href="#home"><p>Home</p><div></div></a>
+          <a href="#news"><p>News</p><div></div></a>
           <a href="#stats"><p>Stats</p><div></div></a>
           <a href="#videos"><p>Videos</p><div></div></a>
           <a href="#streams"><p>Streams</p><div></div></a>
@@ -63,22 +64,35 @@
       
       
       <div id="page_content">
-        <div id="home" class="content_item large_content_item">
-          <div class="content_item_image content_item_image_left carousel">
+        <div id="home" class="content_item" style="justify-content:center;overflow:hidden;">
+          <div class="content_item_image carousel" style="display:flex;width:100%;min-width:100%;">
             <img src="assets/images/maps/raindance-1.webp" draggable="false" class="visible" style="z-index:0;">
             <img src="assets/images/maps/crossfire-1.webp" draggable="false" class="invisible" style="z-index:1;">
             <img src="assets/images/maps/arx_novena-1.webp" draggable="false" class="invisible" style="z-index:2;">
             <img src="assets/images/maps/katabatic-1.webp" draggable="false" class="invisible" style="z-index:3;">
           </div>
-          <div class="content_item_info content_item_info_right noafter">
+          <div class="landing_title">
+            <h1 class="">Wilderzone&nbsp;Live</h1>
+            <p>News, Stats, Tournaments, Highlights, and useful community Info - <b>all in one place!</b></p>
+          </div>
+          <!--<div class="content_item_info content_item_info_right noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:var(--primary_color_light)"></span>
             <div>
               <h1 class="home_title">💥 <black>Welcome to </black>Wilderzone&nbsp;Live</h1>
               <h3><black>The hub for all things Tribes: Ascend</black></h3>
               <p>News, Stats, Tournaments, Highlights, and useful community Info - <b>all in one place!</b></p>
-              <h2><white>News</white></h2>
-              <div class="inset_section">
+            </div>
+          </div>-->
+        </div>
+        
+        <div id="news" class="content_item">
+          <div class="content_item_info noafter">
+            <span class="content_item_splash"></span>
+            <span class="content_item_splash_overlay" style="background-color:var(--primary_color_light)"></span>
+            <div style="flex-direction:row;">
+              <h1 style="margin:0px 20px 0px 20px;">News</h1>
+              <div class="inset_section" style="height:calc(100% - 20px);margin-top:10px;">
                 <div>
                   <div class="news_card a_fade_in" style="animation-delay:0.0s;">
                     <div class="news_card_inner">
@@ -398,7 +412,7 @@
     
     function getCurrentPage(){
       if(window.pageYOffset > 0){
-        var y = Math.floor(((window.pageYOffset - window.innerHeight) / content_item_height) + 0.3);
+        var y = Math.floor(((window.pageYOffset - content_item_height) / content_item_height) + 0.3);
         return (y < 0 ? 0 : (window.scrollY + window.innerHeight >= $(document).height() ? numberOfNav - 1 : y + 1));
       }else{
         return 0;

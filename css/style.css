@@ -299,6 +299,9 @@
   height: 1px;
   background-color: white;
 }
+.landing_title p{
+  text-align: center;
+}
 .content_item_image{
   position: relative;
   z-index: 0;
@@ -901,7 +904,7 @@ footer{
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100px;
+  height: 110px;
   background: var(--original_wilderorg_grey_dark) url("../assets/images/wilderorg_noisebg.png");
 }
 footer p{
@@ -930,7 +933,7 @@ footer img{
     margin: -2px 0px 25px 4px;
   }
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
   .content_item_image{
     display: none;
   }
@@ -952,5 +955,15 @@ footer img{
 @media only screen and (max-width: 562px){
   .content_item_info > div .home_title::before{
     height: calc(3em + 58px);
+  }
+}
+@media only screen and (max-width: 400px){
+  .landing_title h1{
+    font-size: 42px;
+  }
+}
+@media only screen and (max-width: 350px){
+  .landing_title h1{
+    font-size: 38px;
   }
 }

@@ -918,6 +918,12 @@ footer img{
   width: 16px;
   margin: 1px 0px 0px 3px;
 }
+.full_footer{
+  display: flex;
+}
+.small_footer{
+  display: none;
+}
 
 /*============RESPONSIVE============*/
 @media only screen and (max-width: 900px){
@@ -955,6 +961,14 @@ footer img{
 @media only screen and (max-width: 562px){
   .content_item_info > div .home_title::before{
     height: calc(3em + 58px);
+  }
+}
+@media only screen and (max-width: 550px){
+  .full_footer{
+    display: none;
+  }
+  .small_footer{
+    display: flex;
   }
 }
 @media only screen and (max-width: 400px){

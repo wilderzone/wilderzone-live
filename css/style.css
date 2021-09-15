@@ -815,10 +815,6 @@
   transform-origin: 50% 50%;
   cursor: pointer;
 }
-.video_load_more_card:hover img{
-  width: 240%;
-  height: 240%;
-}
 .video_load_more_card p{
   position: absolute;
   z-index: 2;
@@ -834,8 +830,8 @@
 .video_load_more_card img{
   z-index: 1;
   margin: 10px;
-  width: calc(var(--video_card_height) - 14px);
-  height: calc(var(--video_card_height) - 14px);
+  width: 240%;
+  height: 240%;
   background-color: var(--secondary_grey);
   border-radius: 50%;
   box-shadow: 0px 0px 100px -30px grey;
@@ -843,7 +839,7 @@
   transition: 0.2s ease all;
   user-select: none;
 }
-.video_load_more_card:hover > img{
+.video_load_more_card > img{
   transform: scale(1);
 }
 

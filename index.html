@@ -530,4 +530,12 @@
       }
     }
   </script>
+  <script>
+    $("#community_videos_container").on("scroll", function(event){
+      if(event.target.scrollLeft >= (event.target.scrollWidth - event.target.offsetWidth) - 0){
+        console.log("end");
+        loadMoreCommunityVideos(4);
+      }
+    });
+  </script>
 </html>

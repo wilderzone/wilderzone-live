@@ -48,6 +48,7 @@
         </div>
         <!--<img id="mobile-navmenu-open" src="assets/icons/menu_white_24dp.svg" draggable="false" alt="" onclick="toggleMobileNav(event);">-->
         <span class="navbar_splash"><img src="assets/images/navbar_splash.webp" draggable="false" alt=""></span>
+        <!--<span class="navbar_reveal a_collapse_right"></span>-->
       </div>
       <!--<div id="mobile-navmenu" class="hidden" onclick="toggleMobileNav(event);">
         <div id="mobile-navmenuInner">
@@ -64,7 +65,7 @@
       
       
       <div id="page_content">
-        <div id="home" class="content_item" style="justify-content:center;overflow:hidden;">
+        <div id="home" class="content_item a_fade_in" style="justify-content:center;overflow:hidden;">
           <div class="content_item_image carousel" style="display:flex;width:100%;min-width:100%;">
             <img src="assets/images/maps/raindance-1.webp" draggable="false" class="visible" style="z-index:0;">
             <img src="assets/images/maps/crossfire-1.webp" draggable="false" class="invisible" style="z-index:1;">
@@ -86,7 +87,7 @@
           </div>-->
         </div>
         
-        <div id="news" class="content_item">
+        <div id="news" class="content_item a_fade_in" style="animation-delay:0.05s;">
           <div class="content_item_info noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:var(--primary_color_light)"></span>
@@ -204,14 +205,15 @@
           </div>
         </div>
         
-        <div id="stats" class="content_item">
+        <div id="stats" class="content_item a_fade_in" style="animation-delay:0.1s;">
           <div class="content_item_info content_item_info_left noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:var(--original_wilderorg_grey_dark)"></span>
             <div>
               <h1>Player Stats</h1>
               <p>Player and team stats coming soon... Hold tight!</p>
-              <a href="" target="_blank" class="content_item_external_link noclick" style="color:white;border-color:white;"><img src="" draggable="false" class="hidden"><p>Coming&nbsp;Soon...</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false" class="hidden"></a>
+              <p>For now check out how you can contribute to the Wilderzone.org Restoration Project.</p>
+              <a href="https://wilderzone.org/" target="_blank" class="content_item_external_link"><img src="assets/images/wilderzone_logo_symbol_black_small.png" draggable="false"><p>Wilderzone.org</p><img src="assets/icons/chevron_right_black_24dp.svg" draggable="false"></a>
             </div>
           </div>
           <div class="content_item_image content_item_image_right carousel">
@@ -220,7 +222,7 @@
           </div>
         </div>
         
-        <div id="videos" class="content_item">
+        <div id="videos" class="content_item a_fade_in" style="animation-delay:0.15s;">
           <div class="content_item_image content_item_image_left carousel">
             <img src="https://tournaments.wilderzone.live/assets/images/pic-1.webp" draggable="false" class="visible" style="z-index:0;">
             <img src="https://tournaments.wilderzone.live/assets/images/iced and wb vs khorgaar.webp" draggable="false" class="invisible" style="z-index:1;">
@@ -229,9 +231,9 @@
           </div>
           <div class="content_item_info content_item_info_right noafter">
             <span class="content_item_splash"></span>
-            <span class="content_item_splash_overlay" style="background-color:var(--primary_color_light)"></span>
+            <span class="content_item_splash_overlay" style="background-color:#FF0000"></span>
             <div>
-              <h1>Videos</h1>
+              <h1><img src="assets/icons/youtube.svg" draggable="false" style="display:block;width:30px;margin:6px 7px 0px 0px;filter:invert(1);">Videos</h1>
               <p>Recent highlights, montages, routes, tutorials, and other videos from the community:</p>
               <div class="inset_section">
                 <div id="community_videos_container">
@@ -242,7 +244,7 @@
           </div>
         </div>
         
-        <div id="streams" class="content_item">
+        <div id="streams" class="content_item a_fade_in" style="animation-delay:0.2s;">
           <div class="content_item_info content_item_info_left noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:#9146FF"></span>
@@ -301,7 +303,7 @@
           </div>
         </div>
         
-        <div id="tournaments" class="content_item">
+        <div id="tournaments" class="content_item a_fade_in" style="animation-delay:0.25s;">
           <div class="content_item_image content_item_image_left carousel">
             <img src="assets/images/honor_tournament-1.webp" draggable="false" class="visible" style="z-index:0;">
             <img src="https://tournaments.wilderzone.live/assets/images/UAE_Spring_Ascension_2021_BG.webp" draggable="false" class="invisible" style="z-index:1;">
@@ -318,7 +320,7 @@
           </div>
         </div>
         
-        <div id="tamods" class="content_item">
+        <div id="tamods" class="content_item a_fade_in" style="animation-delay:0.3s;">
           <div class="content_item_info content_item_info_left noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:#3A6EC1"></span>
@@ -341,7 +343,7 @@
           </div>
         </div>
         
-        <div id="newmaps" class="content_item">
+        <div id="newmaps" class="content_item a_fade_in" style="animation-delay:0.35s;">
           <div class="content_item_image content_item_image_left carousel">
             <img src="https://www.dodgesdomain.com/assets/images/incidamus-mid-50b19267fa2ada2936072729dc38716f.png" draggable="false" class="visible" style="z-index:0;">
             <img src="https://www.dodgesdomain.com/assets/images/incidamus-features-aa39e684327b4c98c21ba83c04c99a63.png" draggable="false" class="invisible" style="z-index:1;">
@@ -365,7 +367,7 @@
           </div>
         </div>
         
-        <div id="servers" class="content_item">
+        <div id="servers" class="content_item a_fade_in" style="animation-delay:0.4s;">
           <div class="content_item_info content_item_info_left noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:var(--primary_color)"></span>
@@ -383,7 +385,7 @@
           </div>
         </div>
         
-        <div id="info" class="content_item" style="margin-bottom:0px;">
+        <div id="info" class="content_item a_fade_in" style="margin-bottom:0px;animation-delay:0.45s;">
           <div class="content_item_image content_item_image_left">
             <img src="assets/images/starscape_small-square.webp" draggable="false" class="visible" style="z-index:0;width:unset;border-radius:50%;animation:300s linear a_info_image_rotate infinite;">
           </div>

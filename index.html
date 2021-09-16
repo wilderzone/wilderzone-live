@@ -46,22 +46,28 @@
           <a href="#servers"><p>Servers</p><div></div></a>
           <a href="#info"><p>Info</p><div></div></a>
         </div>
-        <!--<img id="mobile-navmenu-open" src="assets/icons/menu_white_24dp.svg" draggable="false" alt="" onclick="toggleMobileNav(event);">-->
+        <img id="mobile_nav_open" src="assets/icons/menu_black_24dp.svg" draggable="false" alt="mobile navigation" onclick="toggleMobileNav(1);">
         <span class="navbar_splash"><img src="assets/images/navbar_splash.webp" draggable="false" alt=""></span>
         <!--<span class="navbar_reveal a_collapse_right"></span>-->
       </div>
-      <!--<div id="mobile-navmenu" class="hidden" onclick="toggleMobileNav(event);">
-        <div id="mobile-navmenuInner">
-          <img id="mobile-navmenu-close" src="assets/icons/close_white_24dp.svg" draggable="false" alt="" onclick="toggleMobileNav(event);">
-          <div id="mobile-navlinks">
+      <div id="mobile_nav" onclick="toggleMobileNav(2);">
+        <div id="mobile_navInner">
+          <img id="mobile_nav_close" src="assets/icons/close_white_24dp.svg" draggable="false" alt="close mobile navigation" onclick="toggleMobileNav(0);">
+          <div id="mobile_navlinks">
+            <p>Navigation</p>
             <a href="#home"><p>Home</p><div></div></a>
-            <a href="#"><p></p><div></div></a>
-            <a href="#"><p></p><div></div></a>
-            <a href="#"><p></p><div></div></a>
-            <a href="#"><p></p><div></div></a>
+            <a href="#news"><p>News</p><div></div></a>
+            <a href="#stats"><p>Stats</p><div></div></a>
+            <a href="#videos"><p>Videos</p><div></div></a>
+            <a href="#streams"><p>Streams</p><div></div></a>
+            <a href="#tournaments"><p>Tournaments</p><div></div></a>
+            <a href="#tamods"><p>TA&nbsp;Mods</p><div></div></a>
+            <a href="#newmaps"><p>New&nbsp;Maps</p><div></div></a>
+            <a href="#servers"><p>Servers</p><div></div></a>
+            <a href="#info"><p>Info</p><div></div></a>
           </div>
         </div>
-      </div>-->
+      </div>
       
       
       <div id="page_content">
@@ -426,7 +432,7 @@
   <script src="lib/jquery.min.js"></script>
   <script src="lib/setIntervalX.js"></script>
   <script src="lib/toSpokenDate.js"></script>
-  <script>
+  <script>//Navigation
     var content_item_height = 420;
     var numberOfNav = $("#navlinks").children().length;
     
@@ -450,6 +456,20 @@
     }
     setActiveNav();
     $(document).on("scroll",function(){setActiveNav()})
+    
+    
+    function toggleMobileNav(action){
+      if(action == 0){
+        $("#mobile_nav").removeClass("mobile_nav_is_open");
+        $("body").css({"overflow-y": "auto"});
+      }else if(action == 1){
+        $("#mobile_nav").addClass("mobile_nav_is_open");
+        $("body").css({"overflow-y": "hidden"});
+      }else if(action == 2){
+        $("#mobile_nav").removeClass("mobile_nav_is_open");
+        $("body").css({"overflow-y": "auto"});
+      }
+    }
   </script>
   <script>
     function highlightLatestNews(){

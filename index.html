@@ -558,6 +558,10 @@
             iframe = '<iframe src="https://www.youtube-nocookie.com/embed/' + community_videos[k]["url"] + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
           }else if(community_videos[k]["platform"] == "TTV"){
             iframe = '<iframe src="https://clips.twitch.tv/embed?clip=' + community_videos[k]["url"] + '&parent=wilderzone.live" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>';
+          }else if(community_videos[k]["platform"] == "D"){
+            iframe = '<video controls>'
+                   +   '<source src="https://cdn.discordapp.com/attachments/' + community_videos[k]["url"] + '" type="video/mp4">'
+                   + '</video>';
           }
           
           var item = '<div class="video_card">'

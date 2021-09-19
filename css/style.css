@@ -699,7 +699,7 @@
 .video_card:last-child{
   margin: 0px 15px 0px 15px;
 }
-.video_card iframe{
+.video_card iframe, .video_card video{
   display: block;
   width: 175%;
   height: 175%;

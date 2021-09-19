@@ -592,7 +592,7 @@
   </script>
   <script>
     $("#community_videos_container").on("scroll", function(event){
-      if(event.target.scrollLeft >= (event.target.scrollWidth - event.target.offsetWidth) - 10){
+      if(event.target.scrollLeft >= (event.target.scrollWidth - event.target.offsetWidth) - 50){
         console.log("end");
         loadMoreCommunityVideos(4);
       }

@@ -75,6 +75,7 @@
     "Meta": [
       ["../assets/images/tribes/Tribes Ascend.webp","png","","contain","",""],
       ["../assets/images/tribes/Hi-Rez Studios.png","png","","contain","",""],
+      ["../assets/images/tribes/HR.png","png","128x128","unset","",""],
       ["../assets/images/tribes/BE.png","png","","contain","",""],
       ["../assets/images/tribes/DS.png","png","","contain","",""],
       ["../assets/images/tribes/flag.png","png","","contain","",""],
@@ -84,7 +85,10 @@
       ["../assets/images/tribes/Jet Left.png","png","","contain","",""],
       ["../assets/images/tribes/Standing.png","png","","contain","",""],
       ["../assets/images/tribes/Versus.png","png","","contain","",""],
+      ["../assets/images/tribes/banner-1.jpg","jpg","1200x627","cover","",""],
       ["../assets/images/tribes/Circle Logo.png","png","","contain","",""],
+      ["../assets/images/tribes/original launcher.jpg","jpg","798x598","cover","",""],
+      ["../assets/images/tribes/beta testing stats.jpg","jpg","236x478","cover","",""],
       ["../assets/images/shazbot.webp","jpg","","cover","Jack","2012"]
     ],
     "Ranks": [

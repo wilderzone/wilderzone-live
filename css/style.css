@@ -176,6 +176,9 @@
   margin-right: 0px;
   clip-path: unset;
 }
+.simple_navbar #logo::after{
+  display: none;
+}
 .simple_navbar:hover #logo{
   background-color: var(--primary_color);
 }

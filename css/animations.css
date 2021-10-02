@@ -32,6 +32,15 @@
   100% {opacity: 1;
         transform: scale(1);}
 }
+.a_scale_in_from_left{
+  animation: var(--anim_duration_medium) ease a_scale_in_from_left forwards;
+}
+@keyframes a_scale_in_from_left{
+  0%   {transform: scaleX(0);
+        opacity: 0;}
+  100% {transform: scaleX(1);
+        opacity: 1;}
+}
 
 .a_slide_out_right{
   animation: var(--anim_duration_long) ease a_slide_out_right forwards;

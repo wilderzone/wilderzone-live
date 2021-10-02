@@ -33,6 +33,7 @@
         transform: scale(1);}
 }
 .a_scale_in_from_left{
+  transform-origin: 0% 50%;
   animation: var(--anim_duration_medium) ease a_scale_in_from_left forwards;
 }
 @keyframes a_scale_in_from_left{

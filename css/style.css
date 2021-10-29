@@ -952,6 +952,10 @@
   transform: translateX(5px);
 }
 
+.news_card_inner .content_item_external_link{
+  max-width: 86px;
+}
+
 footer{
   display: flex;
   flex-direction: column;

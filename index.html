@@ -598,6 +598,14 @@
                    +   '</div>'
                    + '</div>';
           
+
+          //Temporary notice whilst the crawler is being fixed.
+          if(k == "SRVERERR"){
+          var item = '<div class="video_card">'
+                   +   '<p class="video_card_error">⚠ Video feed isn&apos;t updating at the moment... We are working to fix the issue.</p>'
+                   + '</div>';
+          }
+          
           $("#community_videos_container").append(item);
         }
         i++;

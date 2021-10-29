@@ -737,6 +737,22 @@
 .video_card:hover > img{
   transform: scale(1.1);
 }
+.video_card .video_card_error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  background: linear-gradient(0deg, var(--primary_color_light) 0%, var(--primary_color_light) 20%, white 20%, white 80%, var(--primary_color_light) 80%, var(--primary_color_light) 100%);
+}
 .video_card > div:nth-child(2){
   position: absolute;
   z-index: 2;

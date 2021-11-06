@@ -1,0 +1,65 @@
+[
+	{
+		"title": "Monday Night Blitz",
+		"date": "03 Oct 2021",
+		"desc": "The TA Community Hub is bringing back Monday night blitz! 9pm-Midnight EST, Pubstyle. Come hang out in the Community Hub Discord server if you wanna chat or organise teams. See the link below for more info.",
+		"image": "2021-11-03 - Monday Night Blitz.webp",
+		"link": "https://www.reddit.com/r/Tribes/comments/qlb40h/bringing_back_monday_night_blitz_9pm_est/"
+	},
+	{
+		"title": "NA PUGs Every Sunday",
+		"date": "22 Sep 2021",
+		"desc": "The TA Community Hub is now running North American Pick-up Games from 9pm EDT every Sunday. These are competitive 7v7 CTF matches with all weapons enabled and no heavy limit. See the link below for more info.",
+		"image": "2021-09-22 - NA PUGs.webp",
+		"link": "https://www.reddit.com/r/Tribes/comments/pt59a3/tribes_ascend_na_pugs/"
+	},
+	{
+		"title": "TACH Purchases Wilderzone.org",
+		"date": "13 Sep 2021",
+		"desc": "Remember wilderzone.org? Well the Tribes Ascend Community Hub has just bought the 'wilderzone.org' domain name! Plans to restore the original website are in the works.",
+		"image": "2021-09-13 - Wilderzone Org domain purchase.webp",
+		"link": "https://wilderzone.org/"
+	},
+	{
+		"title": "Best of 2021 Submissions Still Open",
+		"date": "30 Aug 2021",
+		"desc": "Karu is making another Best of Year montage! Send in your clips ASAP if you'd like to be featured.",
+		"image": "2021-08-30 - Best of 2021 Submissions Still Open.webp",
+		"link": "https://www.youtube.com/watch?v=A-crWSKyJI8"
+	},
+	{
+		"title": "New Wilderzone Live Website",
+		"date": "21 Aug 2021",
+		"desc": "Phew! A fresh new look with a much better purpose. Welcome to the new and improved Wilderzone Live. Thanks to everyone for your patience :)",
+		"image": "2021-08-10 - New WL Site.webp",
+		"link": "https://wilderzone.live/"
+	},
+	{
+		"title": "Wilderzone Servers Portal",
+		"date": "16 Aug 2021",
+		"desc": "This project has been in the works for a long time, and now it's finally here. Introducing Wilderzone Servers - allowing you to easily check who's online and what servers are active.",
+		"image": "2021-08-11 - Wilderzone Servers.webp",
+		"link": "https://servers.wilderzone.live/"
+	},
+	{
+		"title": "UAE Phoenix Tournament Postponed",
+		"date": "09 July 2021",
+		"desc": "Unfortunately, the UAE Summer Phoenix tournament has been postponed while organizers respond to feedback from the community. Thanks to everyone for being supportive. An update will be posted when the tournament series returns.",
+		"image": "UAE_Summer_Phoenix_2021_poster.webp",
+		"link": ""
+	},
+	{
+		"title": "UAE Ascension Tournament Results",
+		"date": "05 July 2021",
+		"desc": "With the completion of the first tournament in the UAE Alpha Circuit, the results are now live!",
+		"image": "UAE_Spring_Ascension_2021_poster.webp",
+		"link": "https://tournaments.wilderzone.live/"
+	},
+	{
+		"title": "Launcher Update",
+		"date": "28 May 2021",
+		"desc": "The TA Mods team has been hard at work, and this Friday they released TLS version 2.0.0! This version now includes a built-in package downloader for downloading new maps and assets.",
+		"image": "2021-05-28 - TA Mods Update.webp",
+		"link": "https://github.com/mcoot/TribesLauncherSharp/releases/tag/2.0.0"
+	}
+]

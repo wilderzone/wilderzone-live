@@ -16,7 +16,7 @@
   position: absolute;
   z-index: -1;
   top: 0px;
-  left: 160px;
+  left: 210px;
   display: block;
   width: 100%;
   height: 100%;
@@ -1000,7 +1000,7 @@ footer img{
 }
 
 /*============RESPONSIVE============*/
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 950px){
   .navbar_splash{
     display: none;
   }

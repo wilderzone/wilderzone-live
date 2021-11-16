@@ -526,7 +526,8 @@
           
           var iframe = "";
           if(community_videos[k]["platform"] == "YT"){
-            iframe = '<iframe src="https://www.youtube-nocookie.com/embed/' + community_videos[k]["url"] + '" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            iframe = '<iframe src="https://www.youtube-nocookie.com/embed/' + community_videos[k]["url"] + '" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen '
+                   + 'srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:68px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube-nocookie.com/embed/' + community_videos[k]["url"] + '><img src=https://img.youtube.com/vi/' + community_videos[k]["url"] + '/hqdefault.jpg><span>▶</span></a>"></iframe>';
           }else if(community_videos[k]["platform"] == "TTV"){
             iframe = '<iframe src="https://clips.twitch.tv/embed?clip=' + community_videos[k]["url"] + '&parent=wilderzone.live" loading="lazy" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>';
           }else if(community_videos[k]["platform"] == "D"){

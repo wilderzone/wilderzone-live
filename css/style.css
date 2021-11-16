@@ -1,5 +1,5 @@
 #site_loading_overlay{
-  position: absolute;
+  position: fixed;
   z-index: 20;
   inset: 0px;
   display: flex;

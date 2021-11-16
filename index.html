@@ -31,6 +31,12 @@
   </head>
   
   <body>
+    <div id="site_loading_overlay" class="a_fade_out">
+      <img src="assets/images/Honor_Logo.svg" draggable="false" loading="eager">
+      <h2>LOADING</h2>
+      <div><div></div></div>
+    </div>
+
     <main>
       <div id="navbar">
         <a href="" id="logo" title="Wilderzone Live"><img src="assets/images/ta.webp" draggable="false" alt="site logo"><div class="title">WL</div></a>
@@ -95,7 +101,7 @@
           </div>-->
         </div>
         
-        <div id="news" class="content_item a_fade_in" style="animation-delay:0.05s;">
+        <div id="news" class="content_item a_fade_in" style="animation-delay:1.05s;">
           <div class="content_item_info noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:var(--primary_color_light)"></span>
@@ -110,7 +116,7 @@
           </div>
         </div>
         
-        <div id="discord" class="content_item a_fade_in" style="animation-delay:0.1s;">
+        <div id="discord" class="content_item a_fade_in" style="animation-delay:1.1s;">
           <div class="content_item_image content_item_image_left">
             <img src="assets/images/389911-UDD1.webp" draggable="false" class="visible" style="z-index:0;">
           </div>
@@ -129,7 +135,7 @@
           </div>
         </div>
         
-        <div id="stats" class="content_item a_fade_in" style="animation-delay:0.15s;">
+        <div id="stats" class="content_item a_fade_in" style="animation-delay:1.15s;">
           <div class="content_item_info content_item_info_left noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:var(--original_wilderorg_grey_dark)"></span>
@@ -146,7 +152,7 @@
           </div>
         </div>
         
-        <div id="videos" class="content_item a_fade_in" style="animation-delay:0.2s;">
+        <div id="videos" class="content_item a_fade_in" style="animation-delay:1.2s;">
           <div class="content_item_image content_item_image_left carousel">
             <img src="https://tournaments.wilderzone.live/assets/images/pic-1.webp" draggable="false" class="visible" style="z-index:0;">
             <img src="https://tournaments.wilderzone.live/assets/images/iced and wb vs khorgaar.webp" draggable="false" class="invisible" style="z-index:1;">
@@ -168,7 +174,7 @@
           </div>
         </div>
         
-        <div id="streams" class="content_item a_fade_in" style="animation-delay:0.25s;">
+        <div id="streams" class="content_item a_fade_in" style="animation-delay:1.25s;">
           <div class="content_item_info content_item_info_left noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:#9146FF"></span>
@@ -236,7 +242,7 @@
           </div>
         </div>
         
-        <div id="download" class="content_item a_fade_in" style="animation-delay:0.3s;">
+        <div id="download" class="content_item a_fade_in" style="animation-delay:1.3s;">
           <div class="content_item_image content_item_image_left">
             <img src="assets/images/main_menu.webp" draggable="false" class="visible" style="z-index:0;">
           </div>
@@ -269,7 +275,7 @@
           </div>
         </div>-->
         
-        <div id="tamods" class="content_item a_fade_in" style="animation-delay:0.35s;">
+        <div id="tamods" class="content_item a_fade_in" style="animation-delay:1.35s;">
           <div class="content_item_info content_item_info_left noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:#3A6EC1"></span>
@@ -292,7 +298,7 @@
           </div>
         </div>
         
-        <div id="newmaps" class="content_item a_fade_in" style="animation-delay:0.4s;">
+        <div id="newmaps" class="content_item a_fade_in" style="animation-delay:1.4s;">
           <div class="content_item_image content_item_image_left carousel">
             <img src="https://www.dodgesdomain.com/assets/images/incidamus-mid-50b19267fa2ada2936072729dc38716f.png" draggable="false" class="visible" style="z-index:0;">
             <img src="https://www.dodgesdomain.com/assets/images/incidamus-features-aa39e684327b4c98c21ba83c04c99a63.png" draggable="false" class="invisible" style="z-index:1;">
@@ -316,7 +322,7 @@
           </div>
         </div>
         
-        <div id="servers" class="content_item a_fade_in" style="animation-delay:0.45s;">
+        <div id="servers" class="content_item a_fade_in" style="animation-delay:1.45s;">
           <div class="content_item_info content_item_info_left noafter">
             <span class="content_item_splash"></span>
             <span class="content_item_splash_overlay" style="background-color:var(--primary_color)"></span>
@@ -334,7 +340,7 @@
           </div>
         </div>
         
-        <div id="info" class="content_item a_fade_in" style="margin-bottom:0px;animation-delay:0.5s;">
+        <div id="info" class="content_item a_fade_in" style="margin-bottom:0px;animation-delay:1.5s;">
           <div class="content_item_image content_item_image_left">
             <img src="assets/images/starscape_small-square.webp" draggable="false" class="visible" style="z-index:0;width:unset;border-radius:50%;animation:300s linear a_info_image_rotate infinite;">
           </div>
@@ -447,7 +453,7 @@
       success:function(news_data){
         news = news_data;
         loadNews();
-        highlightLatestNews();
+        highlightLatestNews()
       },
       error:function(xhr, status, err){
         console.log("Error loading news: " + xhr.status);
@@ -463,7 +469,7 @@
       var news_content = '';
       var i = 0;
       news.forEach((n) => {
-        news_content += '<div class="news_card a_fade_in" style="animation-delay:0.' + i + 's;">' +
+        news_content += '<div class="news_card a_fade_in" style="animation-delay:1.' + i + 's;">' +
                           '<div class="news_card_inner">' +
                             '<div>' +
                               '<h2>' + n.title + '</h2>' +

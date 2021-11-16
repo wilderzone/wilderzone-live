@@ -4,6 +4,7 @@
   --anim_duration_medium: 0.7s;
   --anim_duration_long: 2s;
 }
+
 /*============ANIMATIONS============*/
 .a_fade_in{
   animation: var(--anim_duration_medium) ease a_fade_in forwards;
@@ -11,6 +12,13 @@
 @keyframes a_fade_in{
   0%   {opacity: 0;}
   100% {opacity: 1;}
+}
+.a_fade_out{
+  animation: var(--anim_duration_medium) ease a_fade_out forwards;
+}
+@keyframes a_fade_out{
+  0%   {opacity: 1;}
+  100% {opacity: 0;}
 }
 .a_fade_up{
   animation: var(--anim_duration_medium) ease a_fade_up forwards;
@@ -78,4 +86,9 @@
 @keyframes a_info_image_rotate{
   0%   {transform: scale(2) rotate(0deg);}
   100% {transform: scale(2) rotate(-360deg);}
+}
+
+@keyframes a_progressbar_fill{
+  0%   {width: 0%;}
+  100% {width: 100%;}
 }

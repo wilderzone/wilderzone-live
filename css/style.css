@@ -1048,6 +1048,28 @@ footer img{
   display: none;
 }
 
+
+.santa_hat::before{
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -19px;
+  display: block;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  background-image: url(../assets/icons/noun-santa-3933027-small.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  transform: rotateZ(-30deg) rotateY(180deg);
+}
+
+
+
 /*============RESPONSIVE============*/
 @media only screen and (max-width: 950px){
   .navbar_splash{

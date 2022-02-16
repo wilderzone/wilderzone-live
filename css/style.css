@@ -1049,7 +1049,7 @@ footer img{
 }
 
 
-.santa_hat::before{
+.holiday_christmas::before{
   content: "";
   position: absolute;
   top: -6px;
@@ -1067,10 +1067,13 @@ footer img{
   background-size: 100%;
   transform: rotateZ(-30deg) rotateY(180deg);
 }
-.valentines{
+.holiday_valentines{
   color: violet;
 }
-.valentines::before{
+.holiday_valentines + p{
+  color: violet;
+}
+.holiday_valentines::before{
   content: "";
   position: absolute;
   top: -25px;

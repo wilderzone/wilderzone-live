@@ -1,5 +1,12 @@
 [
 	{
+		"title": "TAMods Launcher Update",
+		"date": "21 Mar 2022",
+		"desc": "Launcher version 2.1.1 is out and brings with it improved download speed, various community map updates, and a new CTF map, Fracture, by Evil.",
+		"image": "2022-03-21 - TAMods Update.webp",
+		"link": "https://github.com/mcoot/TribesLauncherSharp/releases/tag/2.1.1"
+	},
+	{
 		"title": "Best of 2021",
 		"date": "21 Dec 2021",
 		"desc": "Karu's Best of 2021 montage is out! Huge thanks to everyone in the community who helped make this an amazing year <3",

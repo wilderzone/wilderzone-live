@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>File Share | Wilderzone Live</title>
+	<style>
+		html {
+			background-color: white;
+		}
+		body {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			width: 100vw;
+			height: 100vh;
+			margin: 0px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-color: white;
+		}
+		h1 {
+			position: relative;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+			font-size: 20px;
+		}
+		img {
+			user-select: none;
+			pointer-events: none;
+		}
+		#download {
+			position: relative;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			gap: 50px;
+		}
+		#download a {
+			position: relative;
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			width: 200px;
+			aspect-ratio: 1;
+			padding: 4px;
+			background: linear-gradient(135deg, #6DACC8 20%, #AA00FF);
+			border-radius: 10px;
+			transition: 0.2s ease all;
+			overflow: hidden;
+		}
+		#download a .inner {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			aspect-ratio: 1;
+			background-color: #ffffffF0;
+			border-radius: 6px;
+			overflow: hidden;
+		}
+		#download a .inner::before {
+			content: '';
+			position: absolute;
+			z-index: 0;
+			inset: -70%;
+			display: block;
+			background-image: url(../assets/icons/download_black_24dp.svg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			opacity: 0.1;
+		}
+		#download a,
+		#download a p {
+			color: black;
+			font-size: 22px;
+			text-decoration: none;
+		}
+		#download a:hover {
+			transform: translateY(-5px);
+			box-shadow: 0px 4px 10px -7px black;
+		}
+	</style>
+</head>
+<body>
+	<div id="download">
+		<h1><img src="../assets/icons/download_black_24dp.svg" draggable="false" alt="" width="24"><span>File Not Found...</span></h1>
+		<a href="" target="_blank" download>
+			<span class="inner">
+				<p>Download</p>
+				<img src="../assets/icons/download_black_24dp.svg" draggable="false" alt="download" width="40">
+			</span>
+		</a>
+		<p style="font-size: 14px;">(If the file opens instead of downloading, right-click the arrow and select "Save link as...")</p>
+	</div>
+</body>
+<script>
+	var file_type_icons = {
+		txt: 'text',
+		lua: 'text',
+		mp4: 'video'
+	}
+</script>
+<script>
+	if(window.location.search){
+		let file_name = window.location.search.split('?')[1];
+		if(file_name.split('.')[1] in file_type_icons){
+			document.querySelector('#download h1 img').setAttribute('src', `../assets/icons/file type icons/${file_type_icons[file_name.split('.')[1]]}.svg`);
+			document.querySelector('#download h1 img').setAttribute('alt', `${file_type_icons[file_name.split('.')[1]]} file`);
+		}
+		document.querySelector('#download h1 span').innerText = file_name;
+		document.querySelector('#download h1 span').innerText = file_name;
+		document.querySelector('#download a').setAttribute('href', `https://wilderzone.live/share/${file_name}`);
+		document.querySelector('#download a').setAttribute('download', `${file_name}`);
+	}
+</script>
+</html>

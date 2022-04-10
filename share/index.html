@@ -110,16 +110,29 @@
 	}
 </script>
 <script>
+	function FileExists(url) {
+		var http = new XMLHttpRequest();
+		http.open('HEAD', url, false);
+		http.send();
+		return http.status != 404;
+	}
 	if(window.location.search){
 		let file_name = window.location.search.split('?')[1];
-		if(file_name.split('.')[1] in file_type_icons){
-			document.querySelector('#download h1 img').setAttribute('src', `../assets/icons/file type icons/${file_type_icons[file_name.split('.')[1]]}.svg`);
-			document.querySelector('#download h1 img').setAttribute('alt', `${file_type_icons[file_name.split('.')[1]]} file`);
+		if(FileExists(`https://wilderzone.live/share/${file_name}`)){
+			if(file_name.split('.')[1] in file_type_icons){
+				document.querySelector('#download h1 img').setAttribute('src', `../assets/icons/file type icons/${file_type_icons[file_name.split('.')[1]]}.svg`);
+				document.querySelector('#download h1 img').setAttribute('alt', `${file_type_icons[file_name.split('.')[1]]} file`);
+			}
+			document.querySelector('#download h1 span').innerText = file_name;
+			document.querySelector('#download a').setAttribute('href', `https://wilderzone.live/share/${file_name}`);
+			document.querySelector('#download a').setAttribute('download', `${file_name}`);
+		}else{
+			document.querySelector('#download a').style.display = 'none';
+			document.querySelector('#download > p').style.display = 'none';
 		}
-		document.querySelector('#download h1 span').innerText = file_name;
-		document.querySelector('#download h1 span').innerText = file_name;
-		document.querySelector('#download a').setAttribute('href', `https://wilderzone.live/share/${file_name}`);
-		document.querySelector('#download a').setAttribute('download', `${file_name}`);
+	}else{
+		document.querySelector('#download a').style.display = 'none';
+		document.querySelector('#download > p').style.display = 'none';
 	}
 </script>
 </html>

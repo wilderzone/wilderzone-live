@@ -715,7 +715,7 @@
   margin: -85px 0px 0px 0px;
   padding: 20px 10px 27px 10px;
   background-color: white;
-  background: linear-gradient(-7deg, #606060 0%, #606060 20px, #FFFFFF 35px);
+  background: linear-gradient(-7deg, #606060 0%, #606060 18px, #FFFFFF 32px);
   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 25px), 0% 100%);
   transform: translateY(0px);
   transform-origin: 50% 0%;

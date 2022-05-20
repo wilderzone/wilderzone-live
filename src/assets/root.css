@@ -1,0 +1,92 @@
+/*===============ROOT===============*/
+:root {
+	--primary_color: #41637C;
+	--primary_color_dark: #000000;
+	--primary_color_light: #6DACC8;
+	
+	--secondary_color: #B72C2D;
+	--secondary_color_dark: #000000;
+	--secondary_color_light: #D88D8F;
+	
+	--tertiary_color: #AA00FF;
+	
+	--primary_grey: #302D2C;
+	--secondary_grey: #C0C0C0;
+	--tertiary_grey: #8DA1B0;
+	
+	--glass_background_color: #FFFFFF50;
+	--glass_border_color: #0094FF30;
+	
+	--original_wilderorg_grey: #B8B4AC;
+	--original_wilderorg_grey_dark: #2c2928;
+	--original_wilderorg_grey_light: #F0EDEA;
+	--original_wilderorg_orange_dark: #D94000;
+	--original_wilderorg_orange_light: #FF4B00;
+	--original_wilderorg_blue_dark: #133059;
+	--original_wilderorg_blue_light: #274774;
+	--original_wilderorg_red_dark: #DC0000;
+	--original_wilderorg_red_light: #E56B6A;
+	--original_wilderorg_green_dark: #009172;
+	--original_wilderorg_green_light: #6CBBA9;
+	--original_wilderorg_lightblue_dark: #00E0EB;
+	--original_wilderorg_lightblue_light: #6CE6EB;
+	
+	--header_height: 3rem;
+	--header_color: white;
+	--header_accent_color: var(--primary_color);
+
+	--background_color: white;
+	--text_color: black;
+	
+	--content_item_height: 400px;
+	--large_content_item_height: calc(100vh - var(--nav_height));
+	--content_item_separation: 20px;
+	
+	--video_card_width: 350px;
+	--video_card_height: calc((var(--video_card_width) / 16) * 9);
+	
+	--standard_border_radius: 5px;
+	--small_border_radius: 3px;
+	--large_border_radius: 10px;
+}
+* {
+	position: relative;
+	box-sizing: border-box;
+	margin: 0;
+}
+html {
+	height: 100%;
+	color: var(--text_color);
+	background-color: var(--background_color);
+	scroll-behavior: smooth;
+	scroll-padding-top: var(--nav_height);
+}
+body {
+	display: block;
+	margin: unset;
+	color: var(--text_color);
+	font-family: Segoe UI, sans-serif;
+	background-color: var(--background_color);
+	overflow-x: hidden;
+	overflow-y: auto;
+	transition: 0.2s ease all;
+}
+main {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 150px;
+	width: 100%;
+	padding-top: var(--header_height);
+	padding-bottom: 200px;
+}
+h1 {
+	font-size: 3rem;
+}
+a {
+	color: inherit;
+}
+p {
+	color: inherit;
+}

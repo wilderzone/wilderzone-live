@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&family=Shrikhand&display=swap');
+
 /*===============ROOT===============*/
 :root {
 	--primary_color: #41637C;
@@ -65,7 +67,7 @@ body {
 	display: block;
 	margin: unset;
 	color: var(--text_color);
-	font-family: Segoe UI, sans-serif;
+	font-family: 'Poppins', 'Segoe UI', sans-serif;
 	background-color: var(--background_color);
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -82,7 +84,10 @@ main {
 	padding-bottom: 200px;
 }
 h1 {
-	font-size: 3rem;
+	color: #333;
+	/* font-family: 'Shrikhand', 'Poppins', 'Segoe UI', sans-serif; */
+	font-size: 5rem;
+	font-style: italic;
 }
 a {
 	color: inherit;

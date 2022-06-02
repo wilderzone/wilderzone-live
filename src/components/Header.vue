@@ -26,7 +26,7 @@ export default {
 	<header>
 		<div class="inner">
 			<div class="logo">
-				<img src="@/assets/branding/ta.webp" draggable="false" alt="logo">
+				<img src="@/assets/branding/Logo-Light.svg" draggable="false" alt="logo">
 				<p v-show="d_show_title">Wilderzone Live</p>
 			</div>
 			<nav>

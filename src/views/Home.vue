@@ -49,6 +49,7 @@ export default {
 
 <template>
 	<!-- <LandingCarousel /> -->
+	<div class="splash"></div>
 	<main>
 		<!-- <div class="paths">
 			<div class="top">
@@ -84,6 +85,21 @@ export default {
 </template>
 
 <style>
+.splash {
+	position: absolute;
+	z-index: 0;
+	top: -25vw;
+	left: -25vw;
+	width: 80vw;
+	aspect-ratio: 1;
+	background-image: url('@/assets/branding/Logo-Light.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	opacity: 0.1;
+}
+
+
 .paths {
 	display: flex;
 	flex-flow: column nowrap;

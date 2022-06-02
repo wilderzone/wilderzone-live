@@ -72,14 +72,26 @@ export default {
 		<PrimarySection direction="bottom_left" heading="Wilderzone Live" color="var(--primary_color_light)">
 			<News />
 		</PrimarySection>
-		<PrimarySection direction="right" heading="Discord" color="#6a75f3">
 
+		<PrimarySection direction="right" heading="Download Tribes: Ascend" color="#B72C2D">
+			<p>Download TA!</p>
 		</PrimarySection>
-		<PrimarySection direction="left" heading="Stats" color="#43403f">
 
+		<PrimarySection direction="left" heading="Discord" color="#6a75f3" :image="'@/assets/images/389911-UDD1-small.webp'">
+			<p>Come hang out in the Tribes community discord server.</p>
+			<p>Compete in competitive Tournaments and Pickup Games, join the banter in Mixers, or just chat with other players. Everyone is welcome!</p>
 		</PrimarySection>
-		<PrimarySection direction="right" heading="Videos" color="#ff1a1a">
 
+		<PrimarySection direction="right" heading="Stats" color="#43403f">
+			<p>Check your stats and compare to other players.</p>
+		</PrimarySection>
+
+		<PrimarySection direction="left" heading="Videos" color="#ff1a1a">
+			<p>Recent highlights, montages, routes, tutorials, and other videos from the community.</p>
+		</PrimarySection>
+
+		<PrimarySection direction="right" heading="Live Streams" color="#9c5aff">
+			<p>Tribes: Ascend twitch channels:</p>
 		</PrimarySection>
 	</main>
 </template>

@@ -13,24 +13,31 @@ export default {
 		color: {
 			type: String,
 			required: false
+		},
+		image: {
+			type: String,
+			required: false
 		}
 	}
 }
 </script>
 
 <template>
-	<section :class="`primary_section ${$props.direction}`" :style="{borderColor: $props.color ? $props.color : 'var(--primary_color_light)'}">
+	<section :class="`primary_section ${$props.direction}`" :style="{borderColor: $props.color ? $props.color : 'var(--primary_color_light)', boxShadow: `0 calc(var(--border_width) / 2) 0 0 ${$props.color}20`}">
 		<div class="inner">
-			<h1>{{ $props.heading }}</h1>
+			<h1 :style="{textShadow: $props.color && $props.color[0] === '#' ? `-0.1ch 0 0 ${$props.color}40, -0.2ch 0 0 ${$props.color}30, -0.4ch 0 0 ${$props.color}10` : 'unset'}">{{ $props.heading }}</h1>
 			<slot></slot>
+		</div>
+		<div v-if="$props.image" class="section_images">
+			<img :src="$props.image" draggable="false" alt="">
 		</div>
 	</section>
 </template>
 
 <style>
 .primary_section {
-	--border_radius: 6rem;
-	--border_width: 1.7rem;
+	--border_radius: 100px;
+	--border_width: 24px;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: flex-start;

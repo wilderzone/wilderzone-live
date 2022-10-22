@@ -2,6 +2,7 @@
 import { defineComponent } from 'vue';
 import SiteHeader from '@/components/SiteHeader.vue';
 import PrimarySection from '@/components/PrimarySection.vue';
+import SimpleButton from '@/components/SimpleButton.vue';
 // import NewsCarousel from '@/components/NewsCarousel.vue';
 // import LandingCarousel from '@/components/LandingCarousel.vue';
 
@@ -9,7 +10,8 @@ export default defineComponent({
 	name: 'App',
 	components: {
 		SiteHeader,
-		PrimarySection
+		PrimarySection,
+		SimpleButton
 		// NewsCarousel,
 		// LandingCarousel
 	}
@@ -44,8 +46,11 @@ export default defineComponent({
 			heading="Wilderzone Live"
 			color="var(--primary_color_light)"
 		>
-			<h2>Play now!</h2>
-			<h2>(Buttons for download and stuff)</h2>
+			<h2>Your hub for everything Tribes: Ascend.</h2>
+			<br />
+			<br />
+			<br />
+			<SimpleButton style="font-size: larger">Play now!</SimpleButton>
 			<!-- <News /> -->
 		</PrimarySection>
 

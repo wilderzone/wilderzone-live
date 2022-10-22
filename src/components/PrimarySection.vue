@@ -1,5 +1,7 @@
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
 	name: 'PrimarySection',
 	props: {
 		direction: {
@@ -19,17 +21,34 @@ export default {
 			required: false
 		}
 	}
-}
+});
 </script>
 
 <template>
-	<section :class="`primary_section ${$props.direction}`" :style="{borderColor: $props.color ? $props.color : 'var(--primary_color_light)', boxShadow: `0 calc(var(--border_width) / 2) 0 0 ${$props.color}20`}">
+	<section
+		:class="`primary_section ${$props.direction}`"
+		:style="{
+			borderColor: $props.color
+				? $props.color
+				: 'var(--primary_color_light)',
+			boxShadow: `0 calc(var(--border_width) / 2) 0 0 ${$props.color}20`
+		}"
+	>
 		<div class="inner">
-			<h1 :style="{textShadow: $props.color && $props.color[0] === '#' ? `-0.1ch 0 0 ${$props.color}40, -0.2ch 0 0 ${$props.color}30, -0.4ch 0 0 ${$props.color}10` : 'unset'}">{{ $props.heading }}</h1>
+			<h1
+				:style="{
+					textShadow:
+						$props.color && $props.color[0] === '#'
+							? `-0.1ch 0 0 ${$props.color}40, -0.2ch 0 0 ${$props.color}30, -0.4ch 0 0 ${$props.color}10`
+							: 'unset'
+				}"
+			>
+				{{ $props.heading }}
+			</h1>
 			<slot></slot>
 		</div>
 		<div v-if="$props.image" class="section_images">
-			<img :src="$props.image" draggable="false" alt="">
+			<img :src="$props.image" draggable="false" alt="" />
 		</div>
 	</section>
 </template>
@@ -42,7 +61,7 @@ export default {
 	flex-flow: column nowrap;
 	justify-content: flex-start;
 	align-items: flex-start;
-	width: 92%;
+	width: 93%;
 	/* background-color: var(--background_color);
 	box-shadow: 0 0 20px -10px black,
 				0 0 300px -90px black; */
@@ -52,7 +71,6 @@ export default {
 	min-height: 500px;
 	padding: 30px 40px 40px 40px;
 }
-
 
 .primary_section.left {
 	margin-left: auto;

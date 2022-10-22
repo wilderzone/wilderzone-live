@@ -1,32 +1,34 @@
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-<script>
-export default {
-	name: 'Header',
+export default defineComponent({
+	name: 'SiteHeader',
 	data() {
 		return {
 			d_show_title: false
-		}
+		};
 	},
 	mounted() {
-		window.addEventListener('scroll', function() {
-			if(window.scrollY >= 80){
+		window.addEventListener('scroll', () => {
+			if (window.scrollY >= 80) {
 				this.d_show_title = true;
-			}else{
+			} else {
 				this.d_show_title = false;
 			}
-		}.bind(this));
+		});
 	}
-}
+});
 </script>
 
 <template>
 	<header>
 		<div class="inner">
 			<div class="logo">
-				<img src="@/assets/branding/Logo-Light.svg" draggable="false" alt="logo">
+				<img
+					src="@/assets/branding/Logo-Light.svg"
+					draggable="false"
+					alt="logo"
+				/>
 				<p v-show="d_show_title">Wilderzone Live</p>
 			</div>
 			<nav>
@@ -77,7 +79,11 @@ header .logo p {
 	animation: a_logo_title_in 0.2s ease forwards;
 }
 @keyframes a_logo_title_in {
-	0%   {transform: translateY(100%);}
-	100% {transform: translateY(0%);}
+	0% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
 }
 </style>

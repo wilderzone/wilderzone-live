@@ -33,6 +33,8 @@ export default defineComponent({
 			</div>
 			<nav>
 				<a href="/">Home</a>
+				<a href="/servers">Who's online?</a>
+				<a href="/login">Login</a>
 			</nav>
 		</div>
 	</header>
@@ -87,8 +89,8 @@ header {
 		flex-flow: row nowrap;
 		justify-content: flex-end;
 		align-items: center;
-		gap: 10px;
-		padding: 0px 10px;
+		gap: 3ch;
+		padding: 0px 3ch;
 
 		a {
 			display: flex;
@@ -96,13 +98,14 @@ header {
 			justify-content: center;
 			align-items: center;
 			gap: 1ch;
-			color: var(--primary_color);
+			color: #000;
 			font-weight: bold;
 			text-decoration: none;
 			opacity: 0.8;
-			transition: 0.2s ease opacity;
+			transition: 0.2s ease color, 0.2s ease opacity;
 
 			&:hover {
+				color: var(--primary_color_light);
 				opacity: 1;
 			}
 

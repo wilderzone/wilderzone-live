@@ -32,7 +32,7 @@ export default defineComponent({
 				<p :class="{ show: showTitle }">Wilderzone Live</p>
 			</div>
 			<nav>
-				<RouterLink to="/">Home</RouterLink>
+				<a href="/">Home</a>
 			</nav>
 		</div>
 	</header>
@@ -78,6 +78,47 @@ header {
 
 			&.show {
 				transform: translateY(0%);
+			}
+		}
+	}
+
+	nav {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 10px;
+		padding: 0px 10px;
+
+		a {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: center;
+			align-items: center;
+			gap: 1ch;
+			color: var(--primary_color);
+			font-weight: bold;
+			text-decoration: none;
+			opacity: 0.8;
+			transition: 0.2s ease opacity;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0px;
+				display: block;
+				width: 0%;
+				height: 2px;
+				background-color: currentColor;
+				transition: 0.2s ease width;
+			}
+
+			&:hover::after {
+				width: 100%;
 			}
 		}
 	}

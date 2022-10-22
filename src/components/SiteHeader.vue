@@ -5,15 +5,15 @@ export default defineComponent({
 	name: 'SiteHeader',
 	data() {
 		return {
-			d_show_title: false
+			showTitle: false
 		};
 	},
 	mounted() {
 		window.addEventListener('scroll', () => {
 			if (window.scrollY >= 80) {
-				this.d_show_title = true;
+				this.showTitle = true;
 			} else {
-				this.d_show_title = false;
+				this.showTitle = false;
 			}
 		});
 	}
@@ -29,7 +29,7 @@ export default defineComponent({
 					draggable="false"
 					alt="logo"
 				/>
-				<p v-show="d_show_title">Wilderzone Live</p>
+				<p :class="{ show: showTitle }">Wilderzone Live</p>
 			</div>
 			<nav>
 				<RouterLink to="/">Home</RouterLink>
@@ -38,7 +38,7 @@ export default defineComponent({
 	</header>
 </template>
 
-<style>
+<style lang="scss">
 header {
 	position: fixed;
 	top: 0;
@@ -50,40 +50,36 @@ header {
 	background-color: var(--header_color);
 	box-shadow: 0 0 10px -4px black;
 	overflow: hidden;
-}
-header > .inner {
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	align-items: center;
-}
-header .logo {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
-	align-items: center;
-	gap: 1ch;
-	padding-left: 0.5ch;
-	font-size: 1.7rem;
-	/* position: absolute;
-	left: -200px;
-	filter: contrast(5) grayscale(1) blur(2px);
-	opacity: 0.2; */
-}
-header .logo img {
-	width: var(--header_height);
-	height: var(--header_height);
-}
-header .logo p {
-	transform: translateY(100%);
-	animation: a_logo_title_in 0.2s ease forwards;
-}
-@keyframes a_logo_title_in {
-	0% {
-		transform: translateY(100%);
+
+	> .inner {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
 	}
-	100% {
-		transform: translateY(0%);
+
+	.logo {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 1ch;
+		padding-left: 0.5ch;
+		font-size: 1.7rem;
+
+		img {
+			width: var(--header_height);
+			height: var(--header_height);
+		}
+
+		p {
+			transform: translateY(100%);
+			transition: 0.2s ease transform;
+
+			&.show {
+				transform: translateY(0%);
+			}
+		}
 	}
 }
 </style>

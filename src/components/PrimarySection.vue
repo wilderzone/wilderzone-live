@@ -8,6 +8,11 @@ export default defineComponent({
 			type: String,
 			required: true
 		},
+		size: {
+			type: String,
+			required: false,
+			default: 'medium'
+		},
 		heading: {
 			type: String,
 			required: false
@@ -34,7 +39,7 @@ export default defineComponent({
 			boxShadow: `0 calc(var(--border_width) / 2) 0 0 ${$props.color}20`
 		}"
 	>
-		<div class="inner">
+		<div class="inner" :style="{ minHeight: `var(--${$props.size})` }">
 			<h1
 				:style="{
 					textShadow:
@@ -67,8 +72,11 @@ export default defineComponent({
 				0 0 300px -90px black; */
 }
 .primary_section > .inner {
+	--small: 200px;
+	--medium: 500px;
+	--large: 800px;
 	display: block;
-	min-height: 500px;
+	min-height: var(--medium);
 	padding: 30px 40px 40px 40px;
 }
 

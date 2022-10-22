@@ -43,6 +43,7 @@ export default defineComponent({
 
 		<PrimarySection
 			direction="bottom_left"
+			size="large"
 			heading="Wilderzone Live"
 			color="var(--primary_color_light)"
 		>

@@ -7,19 +7,37 @@ export default defineComponent({
 		color: {
 			type: String,
 			required: false
+		},
+		href: {
+			type: String,
+			required: false
 		}
 	}
 });
 </script>
 
 <template>
-	<a class="simpleButton" :style="{ backgroundColor: $props.color }" href="">
+	<a
+		v-if="$props.href"
+		class="simpleButton"
+		:style="{ backgroundColor: $props.color }"
+		:href="$props.href"
+	>
 		<slot></slot>
 	</a>
+	<button
+		v-else
+		class="simpleButton"
+		:style="{ backgroundColor: $props.color }"
+	>
+		<slot></slot>
+	</button>
 </template>
 
 <style lang="scss">
 .simpleButton {
+	all: unset;
+	position: relative;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;

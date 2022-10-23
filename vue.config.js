@@ -11,6 +11,11 @@ module.exports = defineConfig({
 			entry: 'src/pages/login.ts',
 			template: 'public/index.html',
 			title: 'Login'
+		},
+		register: {
+			entry: 'src/pages/register.ts',
+			template: 'public/index.html',
+			title: 'Register'
 		}
 	}
 });

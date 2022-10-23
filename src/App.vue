@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader.vue';
 import PrimarySection from '@/components/PrimarySection.vue';
 import SimpleButton from '@/components/SimpleButton.vue';
 // import NewsCarousel from '@/components/NewsCarousel.vue';
+import SiteFooter from '@/components/SiteFooter.vue';
 // import LandingCarousel from '@/components/LandingCarousel.vue';
 
 export default defineComponent({
@@ -11,8 +12,9 @@ export default defineComponent({
 	components: {
 		SiteHeader,
 		PrimarySection,
-		SimpleButton
 		// NewsCarousel,
+		SimpleButton,
+		SiteFooter
 		// LandingCarousel
 	}
 });
@@ -100,6 +102,8 @@ export default defineComponent({
 			<p>Tribes: Ascend twitch channels:</p>
 		</PrimarySection>
 	</main>
+
+	<SiteFooter />
 </template>
 
 <style lang="scss">

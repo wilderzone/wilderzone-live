@@ -77,18 +77,18 @@ export default defineComponent({
 			<p>Download TA!</p>
 		</PrimarySection> -->
 
-		<PrimarySection
-			direction="right"
-			heading="Discord"
-			color="#6a75f3"
-			:image="'@/assets/images/389911-UDD1-small.webp'"
-		>
+		<PrimarySection direction="right" heading="Discord" color="#6a75f3">
 			<p>Come hang out in the Tribes community discord server.</p>
 			<p>
 				Compete in competitive Tournaments and Pickup Games, join the
 				banter in Mixers, or just chat with other players. Everyone is
 				welcome!
 			</p>
+			<template v-slot:right>
+				<div class="diskjumpImage">
+					<img src="@/assets/images/diskjump.svg" alt="" />
+				</div>
+			</template>
 		</PrimarySection>
 
 		<PrimarySection direction="left" heading="Stats" color="#FF4B00">
@@ -137,6 +137,22 @@ export default defineComponent({
 	background-repeat: no-repeat;
 	background-size: contain;
 	opacity: 0.1;
+}
+
+.diskjumpImage {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	width: clamp(0px, 100%, 600px);
+	height: 100%;
+	margin-top: auto;
+	border-radius: 0px 0px 75px 0px;
+	overflow: hidden;
+
+	img {
+		display: block;
+		width: 100%;
+	}
 }
 
 .paths {

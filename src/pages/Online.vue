@@ -69,7 +69,7 @@ export default defineComponent({
 				<output name="totalCounter" title="All players online">{{
 					loading ? '...' : hirez + community + pugs
 				}}</output>
-				<label for="totalCounter">Total</label>
+				<label for="totalCounter">Players online</label>
 			</div>
 			<span class="counterLead total"></span>
 			<span class="counterLead hirez"></span>

@@ -133,15 +133,38 @@ export default defineComponent({
 .splash {
 	position: absolute;
 	z-index: 0;
-	top: -25vw;
-	left: -25vw;
-	width: 80vw;
+	top: -25vmax;
+	left: -25vmax;
+	width: 80vmax;
 	aspect-ratio: 1;
 	background-image: url('@/assets/branding/Logo-Light.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 	opacity: 0.1;
+}
+
+.landing {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 50px;
+	width: 100%;
+
+	.left,
+	.right {
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 50px;
+		width: clamp(300px, 100%, 50%);
+	}
+
+	.left {
+		width: clamp(300px, 100%, calc(50% - 50px));
+	}
 }
 
 .diskjumpImage {

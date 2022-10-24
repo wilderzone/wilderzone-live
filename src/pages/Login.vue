@@ -21,11 +21,14 @@ export default defineComponent({
 	<SiteHeader :fixedHeading="true" />
 	<main>
 		<form class="loginForm" action="post">
+			<h1>Login</h1>
 			<label for="username">Username:</label>
 			<input type="text" name="username" v-model="username" />
 			<label for="password">Password:</label>
 			<input type="password" name="password" v-model="password" />
 			<button type="submit">Login</button>
+			<br />
+			<a href="/register">Register</a>
 		</form>
 	</main>
 </template>
@@ -54,13 +57,10 @@ main {
 	&::after {
 		content: '';
 		position: absolute;
-		inset: -70px;
-		bottom: -80px;
+		inset: -40px -80px -85px -80px;
 		display: block;
 		border: 15px solid var(--secondary_color);
 		border-radius: 25px;
-		transform: rotate(-10deg);
-		transform-origin: center;
 		user-select: none;
 		pointer-events: none;
 	}

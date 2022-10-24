@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader.vue';
 import PrimarySection from '@/components/PrimarySection.vue';
 import SimpleButton from '@/components/SimpleButton.vue';
 import NewsCarousel from '@/components/NewsCarousel.vue';
+import StatPreview from '@/components/StatPreview.vue';
 import SiteFooter from '@/components/SiteFooter.vue';
 // import LandingCarousel from '@/components/LandingCarousel.vue';
 
@@ -14,6 +15,7 @@ export default defineComponent({
 		PrimarySection,
 		SimpleButton,
 		NewsCarousel,
+		StatPreview,
 		SiteFooter
 		// LandingCarousel
 	}
@@ -93,6 +95,9 @@ export default defineComponent({
 
 		<PrimarySection direction="left" heading="Stats" color="#FF4B00">
 			<p>Check your stats and compare to other players.</p>
+			<template v-slot:right>
+				<StatPreview />
+			</template>
 		</PrimarySection>
 
 		<PrimarySection direction="left" heading="Videos" color="#ff1a1a">

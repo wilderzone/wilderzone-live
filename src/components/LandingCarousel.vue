@@ -1,8 +1,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+// @ts-expect-error: Image import.
 import image_1 from '@/assets/images/maps/styx-1.webp';
+// @ts-expect-error: Image import.
 import image_2 from '@/assets/images/maps/sunstar-1.webp';
+// @ts-expect-error: Image import.
 import image_3 from '@/assets/images/maps/bella_omega-1.webp';
 
 export default defineComponent({

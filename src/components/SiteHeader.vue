@@ -3,17 +3,24 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
 	name: 'SiteHeader',
+	props: {
+		fixedHeading: {
+			type: Boolean,
+			required: false
+		}
+	},
 	data() {
 		return {
 			showTitle: false
 		};
 	},
 	mounted() {
+		this.showTitle = this.$props.fixedHeading;
 		window.addEventListener('scroll', () => {
 			if (window.scrollY >= 80) {
-				this.showTitle = true;
+				this.showTitle = true || this.$props.fixedHeading;
 			} else {
-				this.showTitle = false;
+				this.showTitle = false || this.$props.fixedHeading;
 			}
 		});
 	}
@@ -29,11 +36,15 @@ export default defineComponent({
 					draggable="false"
 					alt="logo"
 				/>
-				<p :class="{ show: showTitle }">Wilderzone Live</p>
+				<p :class="{ show: showTitle }">
+					<span style="transition-delay: 0s">Wilderzone Live</span>
+					<span style="transition-delay: 0.07s">Wilderzone Live</span>
+					<span style="transition-delay: 0.15s">Wilderzone Live</span>
+				</p>
 			</div>
 			<nav>
 				<a href="/">Home</a>
-				<a href="/servers">Who's online?</a>
+				<a href="/online">Who's online?</a>
 				<a href="/login">Login</a>
 			</nav>
 		</div>
@@ -50,7 +61,7 @@ header {
 	display: block;
 	height: var(--header_height);
 	background-color: var(--header_color);
-	box-shadow: 0 0 10px -4px black;
+	box-shadow: 0 0 20px -9px black;
 	overflow: hidden;
 
 	> .inner {
@@ -75,10 +86,27 @@ header {
 		}
 
 		p {
-			transform: translateY(100%);
-			transition: 0.2s ease transform;
+			display: block;
+			height: 1em;
 
-			&.show {
+			span {
+				position: absolute;
+				top: -4px;
+				white-space: nowrap;
+				transform: translateY(100%);
+				opacity: 0.1;
+				transition: 0.2s ease transform;
+			}
+
+			span:first-child {
+				opacity: 0.7;
+			}
+
+			span:nth-child(2) {
+				opacity: 0.2;
+			}
+
+			&.show span {
 				transform: translateY(0%);
 			}
 		}

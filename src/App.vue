@@ -49,11 +49,25 @@ export default defineComponent({
 			heading="Wilderzone Live"
 			color="var(--primary_color_light)"
 		>
-			<h2>Your hub for everything Tribes: Ascend.</h2>
-			<br />
-			<br />
-			<br />
-			<SimpleButton style="font-size: larger">Play now!</SimpleButton>
+			<div class="landing">
+				<div class="left">
+					<h2>
+						Your hub for everything
+						<span style="color: var(--secondary_color)"
+							>Tribes: Ascend</span
+						>.
+					</h2>
+					<SimpleButton style="font-size: larger"
+						>Play now!</SimpleButton
+					>
+					<SimpleButton
+						style="font-size: larger"
+						href="https://llamagrab.net/"
+						>Host a server</SimpleButton
+					>
+				</div>
+				<div class="right"></div>
+			</div>
 			<template v-slot:right>
 				<NewsCarousel />
 			</template>

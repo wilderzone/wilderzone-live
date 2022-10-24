@@ -39,6 +39,8 @@
 	--header_color: white;
 	--header_accent_color: var(--primary_color);
 
+	--footer_height: max(110px, 3rem);
+
 	--background_color: white;
 	--text_color: black;
 	

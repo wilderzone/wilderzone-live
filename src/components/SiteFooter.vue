@@ -28,7 +28,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: max(110px, 3rem);
+	height: var(--footer_height);
 	background: var(--original_wilderorg_grey_dark)
 		url('@/assets/images/wilderorg_noisebg.png');
 

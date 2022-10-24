@@ -2,11 +2,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import SiteHeader from '@/components/SiteHeader.vue';
+import SiteFooter from '@/components/SiteFooter.vue';
 
 export default defineComponent({
 	name: 'Login',
 	components: {
-		SiteHeader
+		SiteHeader,
+		SiteFooter
 	},
 	data() {
 		return {
@@ -31,6 +33,8 @@ export default defineComponent({
 			<a href="/register">Register</a>
 		</form>
 	</main>
+
+	<SiteFooter />
 </template>
 
 <style lang="scss">

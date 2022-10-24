@@ -3,6 +3,7 @@
 import { defineComponent } from 'vue';
 import SiteHeader from '@/components/SiteHeader.vue';
 import RefreshButton from '@/components/RefreshButton.vue';
+import SiteFooter from '@/components/SiteFooter.vue';
 
 interface Server {
 	locked: boolean;
@@ -22,7 +23,8 @@ export default defineComponent({
 	name: 'Online',
 	components: {
 		SiteHeader,
-		RefreshButton
+		RefreshButton,
+		SiteFooter
 	},
 	data() {
 		return {
@@ -122,6 +124,8 @@ export default defineComponent({
 			</div>
 		</div>
 	</main>
+
+	<SiteFooter />
 </template>
 
 <style lang="scss">
@@ -344,6 +348,7 @@ main {
 		align-items: center;
 		height: 3rem;
 		background-color: #f9f9f9;
+		border-radius: 7px;
 
 		> div {
 			/* Indicator */

@@ -16,6 +16,11 @@ module.exports = defineConfig({
 			entry: 'src/pages/register.ts',
 			template: 'public/index.html',
 			title: 'Register'
+		},
+		online: {
+			entry: 'src/pages/online.ts',
+			template: 'public/index.html',
+			title: "Who's Online?"
 		}
 	}
 });

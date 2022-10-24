@@ -1,0 +1,29 @@
+{
+	"online_players_list": [ "taserverbot", "maddox123", "Imascrewup" ],
+	"online_servers_list": [
+		{ "locked": true, "map": "Arx Novena", "mode": "goty", "name": "AU Testing", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Bella Omega NS", "mode": "goty", "name": "AU Capping Practice", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Arx Novena", "mode": "goty", "name": "AU Arena", "players": [], "type": "CTF" },
+		{ "locked": true, "map": "Arx Novena", "mode": "goty", "name": "AU Pugs", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Walled In", "mode": "ootb", "name": "Explosive Battle", "players": [], "type": "Arena" },
+		{ "locked": true, "map": "Walled In", "mode": "ootb", "name": "solly's sandbox", "players": [], "type": "Arena" },
+		{ "locked": false, "map": "Arx Novena", "mode": "ootb", "name": "Balanced Weapons", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Katabatic", "mode": "ootb", "name": "Only Impact", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Katabatic", "mode": "goty", "name": "Theobald Cap Practice", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Unknown", "mode": "ootb", "name": "bunny rabbit", "players": [], "type": "Unknown" },
+		{ "locked": false, "map": "Katabatic", "mode": "ootb", "name": "NA Central CTF", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Katabatic", "mode": "goty", "name": "NA Capping Practice", "players": [ "Imascrewup" ], "type": "CTF" },
+		{ "locked": false, "map": "Arx Novena", "mode": "ootb", "name": "Community Maps", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Katabatic", "mode": "ootb", "name": "NA West CTF", "players": [], "type": "CTF" },
+		{ "locked": true, "map": "Arx Novena", "mode": "goty", "name": "KyChales GOTY Routes", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Outskirts", "mode": "ootb", "name": "NA TDM West", "players": [], "type": "TDM" },
+		{ "locked": false, "map": "Undercroft", "mode": "ootb", "name": "Instagib", "players": [], "type": "Arena" },
+		{ "locked": false, "map": "Katabatic", "mode": "ootb", "name": "weapon testing but not the mike one", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Walled In", "mode": "ootb", "name": "Central Arena | Karu", "players": [], "type": "Arena" },
+		{ "locked": false, "map": "Katabatic", "mode": "ootb", "name": "frog testing", "players": [], "type": "CTF" },
+		{ "locked": true, "map": "Arx Novena", "mode": "ootb", "name": "NA Mixer", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Walled In", "mode": "ootb", "name": "Honor Arena", "players": [], "type": "Arena" },
+		{ "locked": false, "map": "Tartarus", "mode": "ootb", "name": "G26's EU pub server 1", "players": [], "type": "CTF" },
+		{ "locked": false, "map": "Permafrost", "mode": "goty", "name": "G26's EU pub server 2", "players": [], "type": "CTF" }
+	]
+}

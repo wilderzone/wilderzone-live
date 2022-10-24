@@ -30,7 +30,7 @@ export default defineComponent({
 <template>
 	<header>
 		<div class="inner">
-			<div class="logo">
+			<a class="logo" href="/" title="Home">
 				<img
 					src="@/assets/branding/Logo-Light.svg"
 					draggable="false"
@@ -41,7 +41,7 @@ export default defineComponent({
 					<span style="transition-delay: 0.07s">Wilderzone Live</span>
 					<span style="transition-delay: 0.15s">Wilderzone Live</span>
 				</p>
-			</div>
+			</a>
 			<nav>
 				<a href="/">Home</a>
 				<a href="/online">Who's online?</a>

@@ -36,10 +36,11 @@ export default defineComponent({
 			borderColor: $props.color
 				? $props.color
 				: 'var(--primary_color_light)',
-			boxShadow: `0 calc(var(--border_width) / 2) 0 0 ${$props.color}20`
+			boxShadow: `0 calc(var(--border_width) / 2) 0 0 ${$props.color}20`,
+			minHeight: `var(--${$props.size})`
 		}"
 	>
-		<div class="inner" :style="{ minHeight: `var(--${$props.size})` }">
+		<div class="inner">
 			<h1
 				:style="{
 					textShadow:
@@ -52,31 +53,33 @@ export default defineComponent({
 			</h1>
 			<slot></slot>
 		</div>
-		<div v-if="$props.image" class="section_images">
-			<img :src="$props.image" draggable="false" alt="" />
-		</div>
+		<slot name="right"></slot>
 	</section>
 </template>
 
 <style>
 .primary_section {
+	--small: 12.5rem;
+	--medium: 30rem;
+	--large: 50rem;
+	--full: 100vh;
 	--border_radius: 100px;
 	--border_width: 24px;
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: row nowrap;
 	justify-content: flex-start;
 	align-items: flex-start;
 	width: 93%;
+	min-height: var(--medium);
 	/* background-color: var(--background_color);
 	box-shadow: 0 0 20px -10px black,
 				0 0 300px -90px black; */
 }
 .primary_section > .inner {
-	--small: 200px;
-	--medium: 500px;
-	--large: 800px;
-	display: block;
-	min-height: var(--medium);
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
 	padding: 30px 40px 40px 40px;
 }
 

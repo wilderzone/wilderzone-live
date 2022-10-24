@@ -51,6 +51,7 @@ export default defineComponent({
 	background-color: var(--primary_color_light);
 	border-radius: 7px;
 	box-shadow: 0px 2px 0px #888;
+	cursor: pointer;
 
 	&::before,
 	&::after {

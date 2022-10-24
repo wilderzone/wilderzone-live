@@ -1,100 +1,139 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
+import SimpleButton from '@/components/SimpleButton.vue';
+
+interface NewsItem {
+	title: string;
+	date: string;
+	desc: string;
+	image: string;
+	link: string;
+}
 
 export default defineComponent({
-	name: 'NewsCarousel'
+	name: 'NewsCarousel',
+	components: {
+		SimpleButton
+	},
+	data() {
+		return {
+			newsList: [] as NewsItem[]
+		};
+	},
+	methods: {
+		async fetchNewsData(): Promise<NewsItem[]> {
+			const response = await fetch('data/news.json');
+			const data: NewsItem[] = await response.json();
+			return data;
+		}
+	},
+	async mounted(): Promise<void> {
+		this.newsList = await this.fetchNewsData();
+	}
 });
 </script>
 
 <template>
 	<div class="news">
-		<div class="inner">
-			<div class="main">
-				<div class="tile">
-					<h2>News Title</h2>
-					<time>2022/05/18</time>
-					<p>
-						Velit consectetur fugiat fugiat excepteur ut fugiat.
-						Cillum dolor reprehenderit duis est dolor aliquip cillum
-						cupidatat cupidatat cillum ex aliquip consectetur. Anim
-						excepteur mollit proident id minim et.
-					</p>
-				</div>
-			</div>
-			<div class="side">
-				<div class="tile">
-					<h2>News Title</h2>
-					<time>2022/05/18</time>
-					<p>
-						Nisi duis proident veniam nostrud exercitation ut.
-						Deserunt elit esse minim Lorem irure do deserunt dolore
-						laborum commodo irure culpa Lorem ea. Anim ut et et
-						laborum laborum ut tempor eu ullamco nisi.
-					</p>
-				</div>
-				<div class="tile">
-					<h2>News Title</h2>
-					<time>2022/05/18</time>
-					<p>
-						Laborum incididunt nulla aliqua mollit adipisicing id
-						adipisicing commodo qui velit reprehenderit minim
-						aliquip nostrud. Cillum aliqua tempor sit consequat ex
-						ex dolore occaecat cillum irure. Nulla enim elit nisi
-						enim ex fugiat pariatur eu aute enim consectetur labore.
-						In incididunt est incididunt tempor aliqua incididunt.
-						Laborum do enim magna id laborum cupidatat ut fugiat non
-						culpa officia esse. Reprehenderit enim duis exercitation
-						qui aliquip amet do aute irure.
-					</p>
-				</div>
-				<div class="tile">
-					<h2>News Title</h2>
-					<time>2022/05/18</time>
-					<p>
-						Do exercitation cillum labore id proident velit.
-						Proident adipisicing commodo cupidatat occaecat ea
-						adipisicing amet ullamco mollit ex duis et. Nisi sit
-						voluptate laborum culpa aute enim et Lorem officia sit
-						quis proident sunt. Minim amet consectetur mollit in ut
-						aute cupidatat amet consectetur eiusmod tempor. Fugiat
-						anim dolor deserunt laboris laborum minim ex consequat
-						labore do nisi magna Lorem. Enim adipisicing tempor
-						aliquip eu quis aliquip anim fugiat esse.
-					</p>
-				</div>
-				<div class="tile">
-					<h2>News Title</h2>
-					<time>2022/05/18</time>
-					<p>
-						Aliqua aliquip cupidatat id Lorem. Nostrud et velit est
-						elit aliquip minim eu. Deserunt magna cupidatat tempor
-						culpa aliqua elit incididunt.
-					</p>
-				</div>
-			</div>
-		</div>
+		<ol class="inner">
+			<template
+				v-for="[index, news] in Object.entries(newsList)"
+				:key="index"
+			>
+				<li v-if="parseInt(index) < 4" class="tile">
+					<img src="@/assets/images/maps/bella_omega-1.webp" alt="" />
+					<div>
+						<h3>{{ news.title }}</h3>
+						<time>{{ news.date }}</time>
+						<p>{{ news.desc }}</p>
+					</div>
+				</li>
+			</template>
+			<li class="tile">
+				<SimpleButton>More&nbsp;&nbsp;></SimpleButton>
+			</li>
+		</ol>
 	</div>
 </template>
 
-<style>
+<style lang="scss">
 .news {
-}
-.news > .inner {
-	display: flex;
-	flex-flow: row wrap;
-}
-.news .main {
-	width: 50%;
-}
-.news .side {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: flex-start;
-	width: 50%;
-}
-.news .tile {
-}
-.news .tile p {
-	display: none;
+	width: clamp(300px, 100%, 50%);
+	min-height: inherit;
+	margin: calc(75px + 5rem) 0px;
+
+	> .inner {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+		height: 60vh;
+		padding: 10px;
+		border: 1px solid #0004;
+		border-radius: 10px;
+	}
+
+	.tile {
+		grid-area: 1 / 1 / 2 / 2;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 10px;
+		padding: 5px;
+
+		&:first-child {
+			grid-area: 1 / 1 / 5 / 2;
+			flex-flow: column nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			> div {
+				gap: 10px;
+			}
+
+			img {
+				width: 100%;
+			}
+
+			p {
+				display: contents;
+			}
+		}
+
+		&:nth-child(2) {
+			grid-area: 1 / 2 / 2 / 3;
+		}
+
+		&:nth-child(3) {
+			grid-area: 2 / 2 / 3 / 3;
+		}
+
+		&:nth-child(4) {
+			grid-area: 3 / 2 / 4 / 3;
+		}
+
+		&:nth-child(5) {
+			grid-area: 4 / 2 / 5 / 3;
+		}
+
+		img {
+			width: 150px;
+			border-radius: 7px;
+			box-shadow: 0px 10px 30px -10px #0032;
+		}
+
+		> div {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+		p {
+			display: none;
+		}
+	}
 }
 </style>

@@ -3,7 +3,7 @@ import { defineComponent } from 'vue';
 import SiteHeader from '@/components/SiteHeader.vue';
 import PrimarySection from '@/components/PrimarySection.vue';
 import SimpleButton from '@/components/SimpleButton.vue';
-// import NewsCarousel from '@/components/NewsCarousel.vue';
+import NewsCarousel from '@/components/NewsCarousel.vue';
 import SiteFooter from '@/components/SiteFooter.vue';
 // import LandingCarousel from '@/components/LandingCarousel.vue';
 
@@ -12,8 +12,8 @@ export default defineComponent({
 	components: {
 		SiteHeader,
 		PrimarySection,
-		// NewsCarousel,
 		SimpleButton,
+		NewsCarousel,
 		SiteFooter
 		// LandingCarousel
 	}
@@ -45,7 +45,7 @@ export default defineComponent({
 
 		<PrimarySection
 			direction="bottom_left"
-			size="large"
+			size="full"
 			heading="Wilderzone Live"
 			color="var(--primary_color_light)"
 		>
@@ -54,7 +54,9 @@ export default defineComponent({
 			<br />
 			<br />
 			<SimpleButton style="font-size: larger">Play now!</SimpleButton>
-			<!-- <News /> -->
+			<template v-slot:right>
+				<NewsCarousel />
+			</template>
 		</PrimarySection>
 
 		<!-- <PrimarySection direction="right" heading="Download Tribes: Ascend" color="#B72C2D">

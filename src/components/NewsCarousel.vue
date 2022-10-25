@@ -35,7 +35,6 @@ export default defineComponent({
 			}
 		},
 		saveReadList(list?: string[]): void {
-			console.log('save');
 			window.localStorage.setItem(
 				'newsReadList',
 				JSON.stringify(list ?? this.read)

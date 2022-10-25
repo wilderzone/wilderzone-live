@@ -15,6 +15,10 @@ export default defineComponent({
 		dense: {
 			type: Boolean,
 			required: false
+		},
+		fill: {
+			type: Boolean,
+			required: false
 		}
 	}
 });
@@ -24,19 +28,23 @@ export default defineComponent({
 	<a
 		v-if="$props.href"
 		class="simpleButton"
-		:class="{ dense: $props.dense }"
+		:class="{ dense: $props.dense, fill: $props.fill }"
 		:style="{ backgroundColor: $props.color }"
 		:href="$props.href"
 	>
-		<slot></slot>
+		<div class="inner">
+			<slot></slot>
+		</div>
 	</a>
 	<button
 		v-else
 		class="simpleButton"
-		:class="{ dense: $props.dense }"
+		:class="{ dense: $props.dense, fill: $props.fill }"
 		:style="{ backgroundColor: $props.color }"
 	>
-		<slot></slot>
+		<div class="inner">
+			<slot></slot>
+		</div>
 	</button>
 </template>
 
@@ -64,10 +72,27 @@ export default defineComponent({
 		padding: 5px 10px;
 	}
 
+	&.fill {
+		width: 100%;
+		height: 100%;
+		padding: unset;
+		color: var(--primary_color_light);
+		font-weight: bold;
+		background-color: unset;
+		border: 3px solid currentColor;
+		box-shadow: none;
+
+		&::before,
+		&::after {
+			mix-blend-mode: difference;
+		}
+	}
+
 	&::before,
 	&::after {
 		content: '';
 		position: absolute;
+		z-index: 0;
 		inset: 0;
 		display: block;
 		background: radial-gradient(
@@ -97,6 +122,17 @@ export default defineComponent({
 	&:hover::after {
 		background-size: 90%;
 		opacity: 0.2;
+	}
+
+	> .inner {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
 	}
 }
 </style>

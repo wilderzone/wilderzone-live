@@ -11,6 +11,10 @@ export default defineComponent({
 		href: {
 			type: String,
 			required: false
+		},
+		dense: {
+			type: Boolean,
+			required: false
 		}
 	}
 });
@@ -20,6 +24,7 @@ export default defineComponent({
 	<a
 		v-if="$props.href"
 		class="simpleButton"
+		:class="{ dense: $props.dense }"
 		:style="{ backgroundColor: $props.color }"
 		:href="$props.href"
 	>
@@ -28,6 +33,7 @@ export default defineComponent({
 	<button
 		v-else
 		class="simpleButton"
+		:class="{ dense: $props.dense }"
 		:style="{ backgroundColor: $props.color }"
 	>
 		<slot></slot>
@@ -52,6 +58,11 @@ export default defineComponent({
 	border-radius: 7px;
 	box-shadow: 0px 2px 0px #888;
 	cursor: pointer;
+
+	&.dense {
+		width: 10ch;
+		padding: 5px 10px;
+	}
 
 	&::before,
 	&::after {

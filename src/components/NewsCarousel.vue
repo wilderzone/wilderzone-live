@@ -3,6 +3,7 @@ import { defineComponent } from 'vue';
 import SimpleButton from '@/components/SimpleButton.vue';
 
 interface NewsItem {
+	id: string;
 	title: string;
 	date: string;
 	desc: string;
@@ -17,7 +18,8 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			newsList: [] as NewsItem[]
+			newsList: [] as NewsItem[],
+			read: [] as string[]
 		};
 	},
 	methods: {
@@ -25,10 +27,30 @@ export default defineComponent({
 			const response = await fetch('data/news.json');
 			const data: NewsItem[] = await response.json();
 			return data;
+		},
+		loadReadList(): void {
+			const storedList = window.localStorage.getItem('newsReadList');
+			if (storedList) {
+				this.read = JSON.parse(storedList);
+			}
+		},
+		saveReadList(list?: string[]): void {
+			console.log('save');
+			window.localStorage.setItem(
+				'newsReadList',
+				JSON.stringify(list ?? this.read)
+			);
+		},
+		updateReadList(id: string): void {
+			if (!this.read.includes(id)) {
+				this.read.push(id);
+			}
+			this.saveReadList();
 		}
 	},
 	async mounted(): Promise<void> {
 		this.newsList = await this.fetchNewsData();
+		this.loadReadList();
 	}
 });
 </script>
@@ -40,17 +62,22 @@ export default defineComponent({
 				v-for="[index, news] in Object.entries(newsList)"
 				:key="index"
 			>
-				<li v-if="parseInt(index) < 4" class="tile">
+				<li
+					v-if="parseInt(index) < 4"
+					class="tile"
+					:class="{ unread: !read.includes(news.id) }"
+					@mouseenter="updateReadList(news.id)"
+				>
 					<img src="@/assets/images/maps/bella_omega-1.webp" alt="" />
 					<div>
-						<h3>{{ news.title }}</h3>
+						<h3 :title="news.title">{{ news.title }}</h3>
 						<time>{{ news.date }}</time>
 						<p>{{ news.desc }}</p>
 					</div>
 				</li>
 			</template>
-			<li class="tile">
-				<SimpleButton>More&nbsp;&nbsp;></SimpleButton>
+			<li class="tile" style="padding-bottom: 10px">
+				<SimpleButton fill>More&nbsp;&nbsp;></SimpleButton>
 			</li>
 		</ol>
 	</div>
@@ -70,7 +97,6 @@ export default defineComponent({
 		grid-row-gap: 20px;
 		height: 60vh;
 		padding: 10px;
-		border: 1px solid #0004;
 		border-radius: 10px;
 	}
 
@@ -82,6 +108,10 @@ export default defineComponent({
 		align-items: flex-start;
 		gap: 10px;
 		padding: 5px;
+		background-color: #eee;
+		border: 3px solid transparent;
+		border-radius: 10px;
+		transition: 0.2s ease border;
 
 		&:first-child {
 			grid-area: 1 / 1 / 5 / 2;
@@ -118,6 +148,26 @@ export default defineComponent({
 			grid-area: 4 / 2 / 5 / 3;
 		}
 
+		&.unread {
+			border-color: orange;
+
+			&::after {
+				content: 'New';
+				position: absolute;
+				top: 0px;
+				right: 0px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 0px 1ch;
+				text-transform: uppercase;
+				background-color: orange;
+				border-radius: 0px 0px 0px 5px;
+				user-select: none;
+				pointer-events: none;
+			}
+		}
+
 		img {
 			width: 150px;
 			border-radius: 7px;
@@ -133,6 +183,11 @@ export default defineComponent({
 
 		p {
 			display: none;
+		}
+
+		time {
+			font-size: 0.85em;
+			font-style: italic;
 		}
 	}
 }

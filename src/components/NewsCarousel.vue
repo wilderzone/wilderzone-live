@@ -45,6 +45,12 @@ export default defineComponent({
 				this.read.push(id);
 			}
 			this.saveReadList();
+		},
+		getImage(news: NewsItem): string {
+			if (news.image) {
+				return require(`@/assets/images/news/${news.image}`);
+			}
+			return require('@/assets/images/maps/bella_omega-1.webp');
 		}
 	},
 	async mounted(): Promise<void> {
@@ -67,7 +73,9 @@ export default defineComponent({
 					:class="{ unread: !read.includes(news.id) }"
 					@mouseenter="updateReadList(news.id)"
 				>
-					<img src="@/assets/images/maps/bella_omega-1.webp" alt="" />
+					<div class="image">
+						<img :src="getImage(news)" alt="" />
+					</div>
 					<div>
 						<h3 :title="news.title">{{ news.title }}</h3>
 						<time>{{ news.date }}</time>
@@ -75,7 +83,7 @@ export default defineComponent({
 					</div>
 				</li>
 			</template>
-			<li class="tile" style="padding-bottom: 10px">
+			<li class="tile">
 				<SimpleButton fill>More&nbsp;&nbsp;></SimpleButton>
 			</li>
 		</ol>
@@ -85,7 +93,6 @@ export default defineComponent({
 <style lang="scss">
 .news {
 	width: clamp(300px, 100%, 50%);
-	min-height: inherit;
 	margin: calc(75px + 5rem) 0px;
 
 	> .inner {
@@ -94,7 +101,6 @@ export default defineComponent({
 		grid-template-rows: repeat(4, 1fr);
 		grid-column-gap: 20px;
 		grid-row-gap: 20px;
-		height: 60vh;
 		padding: 10px;
 		border-radius: 10px;
 	}
@@ -122,8 +128,9 @@ export default defineComponent({
 				gap: 10px;
 			}
 
-			img {
+			> .image {
 				width: 100%;
+				aspect-ratio: 2;
 			}
 
 			p {
@@ -167,10 +174,21 @@ export default defineComponent({
 			}
 		}
 
-		img {
+		> .image {
+			display: block;
+			flex-shrink: 0;
 			width: 150px;
+			aspect-ratio: 1.5;
 			border-radius: 7px;
 			box-shadow: 0px 10px 30px -10px #0032;
+			overflow: hidden;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: top;
 		}
 
 		> div {

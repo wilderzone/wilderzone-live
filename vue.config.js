@@ -21,6 +21,11 @@ module.exports = defineConfig({
 			entry: 'src/pages/online.ts',
 			template: 'public/index.html',
 			title: "Who's Online?"
+		},
+		'how-to-play': {
+			entry: 'src/pages/how-to-play.ts',
+			template: 'public/index.html',
+			title: 'How to play Tribes: Ascend'
 		}
 	}
 });

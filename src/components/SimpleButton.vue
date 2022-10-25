@@ -79,12 +79,18 @@ export default defineComponent({
 		color: var(--primary_color_light);
 		font-weight: bold;
 		background-color: unset;
-		border: 3px solid currentColor;
+		border: 2px solid currentColor;
 		box-shadow: none;
+		transition: 0.05s linear border;
+		box-sizing: border-box;
+
+		&:hover {
+			border-width: 5px;
+		}
 
 		&::before,
 		&::after {
-			mix-blend-mode: difference;
+			display: none;
 		}
 	}
 

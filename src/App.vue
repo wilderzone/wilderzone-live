@@ -52,26 +52,20 @@ export default defineComponent({
 			color="var(--primary_color_light)"
 		>
 			<div class="landing">
-				<div class="left">
-					<h2>
-						Your hub for everything
-						<span style="color: var(--secondary_color)"
-							>Tribes: Ascend</span
-						>.
-					</h2>
-					<SimpleButton style="font-size: larger"
-						>Play now!</SimpleButton
-					>
-					<SimpleButton
-						style="font-size: larger"
-						href="https://llamagrab.net/"
-						>Host a server</SimpleButton
-					>
-				</div>
-				<div class="right"></div>
+				<h2>
+					Your hub for everything
+					<span>Tribes: Ascend</span>.
+				</h2>
+				<SimpleButton>Play now!</SimpleButton>
+				<SimpleButton href="https://llamagrab.net/"
+					>Host a server</SimpleButton
+				>
 			</div>
 			<template v-slot:right>
-				<NewsCarousel />
+				<div class="latestNews">
+					<h3>Latest news:</h3>
+					<NewsCarousel />
+				</div>
 			</template>
 		</PrimarySection>
 
@@ -80,12 +74,16 @@ export default defineComponent({
 		</PrimarySection> -->
 
 		<PrimarySection direction="right" heading="Discord" color="#6a75f3">
-			<p>Come hang out in the Tribes community discord server.</p>
+			<p>Come hang out in the Tribes community Discord server.</p>
 			<p>
 				Compete in competitive Tournaments and Pickup Games, join the
 				banter in Mixers, or just chat with other players. Everyone is
 				welcome!
 			</p>
+			<br />
+			<SimpleButton href="https://discord.gg/dd8JgzJ" color="#6a75f3"
+				>Join</SimpleButton
+			>
 			<template v-slot:right>
 				<div class="diskjumpImage">
 					<img src="@/assets/images/diskjump.svg" alt="" />
@@ -146,24 +144,34 @@ export default defineComponent({
 
 .landing {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	justify-content: flex-start;
 	align-items: flex-start;
 	gap: 50px;
 	width: 100%;
 
-	.left,
-	.right {
-		display: flex;
-		flex-flow: column wrap;
-		justify-content: flex-start;
-		align-items: flex-start;
-		gap: 50px;
-		width: clamp(300px, 100%, 50%);
-	}
+	h2 {
+		font-size: 1.7rem;
+		font-weight: 400;
 
-	.left {
-		width: clamp(300px, 100%, calc(50% - 50px));
+		span {
+			color: var(--secondary_color);
+			font-weight: 600;
+		}
+	}
+}
+
+.latestNews {
+	display: flex;
+	flex-flow: column nowrap;
+	width: clamp(300px, 100%, 50%);
+	margin: calc(75px + 5.5rem) 0px 0px;
+
+	> h3 {
+		padding-left: 10px;
+		font-size: 1rem;
+		font-style: italic;
+		font-weight: 300;
 	}
 }
 

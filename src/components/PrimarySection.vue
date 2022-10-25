@@ -57,7 +57,7 @@ export default defineComponent({
 	</section>
 </template>
 
-<style>
+<style lang="scss">
 .primary_section {
 	--small: 12.5rem;
 	--medium: 30rem;
@@ -74,6 +74,10 @@ export default defineComponent({
 	/* background-color: var(--background_color);
 	box-shadow: 0 0 20px -10px black,
 				0 0 300px -90px black; */
+
+	h1 {
+		transform: translateX(-5px);
+	}
 }
 .primary_section > .inner {
 	display: flex;

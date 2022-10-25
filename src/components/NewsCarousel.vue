@@ -92,8 +92,7 @@ export default defineComponent({
 
 <style lang="scss">
 .news {
-	width: clamp(300px, 100%, 50%);
-	margin: calc(75px + 5rem) 0px;
+	width: 100%;
 
 	> .inner {
 		display: grid;

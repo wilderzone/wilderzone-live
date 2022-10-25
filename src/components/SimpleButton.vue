@@ -60,6 +60,7 @@ export default defineComponent({
 	width: 20ch;
 	padding: 10px 15px;
 	color: #fff;
+	font-size: larger;
 	text-align: center;
 	text-decoration: none;
 	background-color: var(--primary_color_light);
@@ -70,6 +71,7 @@ export default defineComponent({
 	&.dense {
 		width: 10ch;
 		padding: 5px 10px;
+		font-size: initial;
 	}
 
 	&.fill {

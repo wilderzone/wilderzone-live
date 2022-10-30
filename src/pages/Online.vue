@@ -414,13 +414,35 @@ main {
 				display: block;
 				width: 2rem;
 				height: 2rem;
-				background-color: #8882;
+				background-color: #7782;
 				background-image: url('@/assets/icons/query_stats.svg');
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: contain;
 				border-radius: 50%;
+				transition: 0.2s ease background-color;
 				cursor: pointer;
+
+				&:hover {
+					background-color: #7784;
+				}
+
+				&::before {
+					content: '';
+					position: absolute;
+					z-index: 0;
+					inset: -10px;
+					background-color: inherit;
+					border-radius: 50%;
+					transform: scale(0);
+					transform-origin: center;
+					opacity: 0.5;
+					transition: 0.2s ease transform;
+				}
+
+				&:hover::before {
+					transform: scale(1);
+				}
 			}
 		}
 

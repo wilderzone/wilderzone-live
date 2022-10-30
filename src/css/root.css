@@ -103,3 +103,21 @@ a {
 p {
 	color: inherit;
 }
+
+/* Mixins */
+.full {
+	width: 100%;
+	height: 100%;
+}
+.col {
+	display: flex;
+	flex-flow: column;
+}
+.row {
+	display: flex;
+	flex-flow: row;
+}
+.disabled {
+	user-select: none !important;
+	pointer-events: none !important;
+}

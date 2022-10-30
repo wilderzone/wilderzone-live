@@ -44,7 +44,7 @@ export default defineComponent({
 			</a>
 			<nav>
 				<a href="/">Home</a>
-				<a href="/online">Who's online?</a>
+				<a href="/online">Who's playing?</a>
 				<a href="/login">Login</a>
 			</nav>
 		</div>

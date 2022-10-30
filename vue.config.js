@@ -20,7 +20,7 @@ module.exports = defineConfig({
 		online: {
 			entry: 'src/pages/online.ts',
 			template: 'public/index.html',
-			title: "Who's Online?"
+			title: "Who's playing Tribes: Ascend?"
 		},
 		'how-to-play': {
 			entry: 'src/pages/how-to-play.ts',

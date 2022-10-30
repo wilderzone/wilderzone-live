@@ -1,9 +1,18 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script lang="ts">
 import { defineComponent } from 'vue';
+import ApexCharts from 'apexcharts';
 import SiteHeader from '@/components/SiteHeader.vue';
 import RefreshButton from '@/components/RefreshButton.vue';
 import SiteFooter from '@/components/SiteFooter.vue';
+
+// @ts-expect-error: ApexCharts must be attached to the window object.
+window.ApexCharts = ApexCharts;
+
+interface Range {
+	min: number;
+	max: number;
+}
 
 interface Server {
 	locked: boolean;
@@ -29,10 +38,13 @@ export default defineComponent({
 	data() {
 		return {
 			loading: true,
+			animatingChartIn: false,
+			animatingChartOut: false,
 			hirez: 0,
 			community: 0,
 			pugs: 0,
-			test: [] as Server[]
+			test: [] as Server[],
+			showChart: false
 		};
 	},
 	methods: {
@@ -48,11 +60,178 @@ export default defineComponent({
 			window.setTimeout(() => {
 				this.loading = false;
 			}, 4000);
+		},
+		renderChart(): void {
+			function generateDayWiseTimeSeries(
+				baseval: number,
+				count: number,
+				yrange: Range
+			) {
+				var i = 0;
+				var series = [];
+				while (i < count) {
+					var x = baseval;
+					var y =
+						Math.floor(
+							Math.random() * (yrange.max - yrange.min + 1)
+						) + yrange.min;
+
+					series.push([x, y]);
+					baseval += 86400000;
+					i++;
+				}
+				return series;
+			}
+
+			const data = generateDayWiseTimeSeries(
+				new Date('22 Apr 2017').getTime(),
+				115,
+				{
+					min: 30,
+					max: 90
+				} as Range
+			);
+			const options1 = {
+				chart: {
+					id: 'chart2',
+					type: 'area',
+					width: '100%',
+					height: '40%',
+					foreColor: '#ccc',
+					toolbar: {
+						autoSelected: 'pan',
+						show: false
+					}
+				},
+				colors: ['#00BAEC'],
+				stroke: {
+					width: 3
+				},
+				grid: {
+					borderColor: '#555',
+					clipMarkers: false,
+					yaxis: {
+						lines: {
+							show: false
+						}
+					}
+				},
+				dataLabels: {
+					enabled: false
+				},
+				fill: {
+					gradient: {
+						enabled: true,
+						opacityFrom: 0.55,
+						opacityTo: 0
+					}
+				},
+				markers: {
+					size: 5,
+					colors: ['#000524'],
+					strokeColor: '#00BAEC',
+					strokeWidth: 3
+				},
+				series: [
+					{
+						data: data
+					}
+				],
+				tooltip: {
+					theme: 'dark'
+				},
+				xaxis: {
+					type: 'datetime'
+				},
+				yaxis: {
+					min: 0,
+					tickAmount: 4
+				}
+			};
+
+			const chart1 = new ApexCharts(
+				document.querySelector('#charts .top'),
+				options1
+			);
+
+			chart1.render();
+
+			const options2 = {
+				chart: {
+					id: 'chart1',
+					width: '100%',
+					height: '25%',
+					type: 'bar',
+					foreColor: '#ccc',
+					brush: {
+						target: 'chart2',
+						enabled: true
+					},
+					selection: {
+						enabled: true,
+						fill: {
+							color: '#fff',
+							opacity: 0.4
+						},
+						xaxis: {
+							min: new Date('27 Jul 2017 10:00:00').getTime(),
+							max: new Date('14 Aug 2017 10:00:00').getTime()
+						}
+					}
+				},
+				colors: ['#FF0080'],
+				series: [
+					{
+						data: data
+					}
+				],
+				stroke: {
+					width: 2
+				},
+				grid: {
+					borderColor: '#444'
+				},
+				markers: {
+					size: 0
+				},
+				xaxis: {
+					type: 'datetime',
+					tooltip: {
+						enabled: false
+					}
+				},
+				yaxis: {
+					tickAmount: 2
+				}
+			};
+
+			const chart2 = new ApexCharts(
+				document.querySelector('#charts .bottom'),
+				options2
+			);
+
+			chart2.render();
+		},
+		toggleChartVisibility(): void {
+			if (this.showChart) {
+				this.animatingChartOut = true;
+				this.showChart = false;
+				window.setTimeout(() => {
+					this.animatingChartOut = false;
+				}, 500);
+			} else {
+				this.animatingChartIn = true;
+				window.setTimeout(() => {
+					this.showChart = true;
+					this.animatingChartIn = false;
+				}, 500);
+			}
 		}
 	},
 	async mounted(): Promise<void> {
 		this.loading = true;
 		this.test = await this.fetchServerData();
+		this.renderChart();
 		this.loading = false;
 	}
 });
@@ -67,11 +246,37 @@ export default defineComponent({
 			@click="refresh()"
 		/>
 		<div class="counters" :class="{ loading: loading }">
-			<div class="counter total">
+			<div
+				class="counter total"
+				:class="{
+					transitionToLeft: animatingChartIn,
+					transitionToCenter: animatingChartOut,
+					areaLeft: showChart || animatingChartOut
+				}"
+			>
 				<output name="totalCounter" title="All players online">{{
 					loading ? '...' : hirez + community + pugs
 				}}</output>
 				<label for="totalCounter">Players online</label>
+				<button
+					class="showMore"
+					:class="{
+						disabled:
+							animatingChartIn || animatingChartOut || loading
+					}"
+					:title="`${showChart ? 'Hide' : 'Show'} history chart`"
+					@click="toggleChartVisibility()"
+				></button>
+			</div>
+			<div
+				id="charts"
+				:class="{
+					disabled: animatingChartIn || animatingChartOut || loading,
+					shown: showChart
+				}"
+			>
+				<div class="top"></div>
+				<div class="bottom"></div>
 			</div>
 			<span class="counterLead total"></span>
 			<span class="counterLead hirez"></span>
@@ -185,6 +390,38 @@ main {
 		&.total {
 			grid-area: 1 / 2 / 2 / 3;
 			justify-content: flex-end;
+			transform: translateX(0%);
+
+			&.transitionToLeft {
+				transform: translateX(-100%);
+				transition: 0.5s ease transform;
+			}
+
+			&.transitionToCenter {
+				transform: translateX(100%);
+				transition: 0.5s ease transform;
+			}
+
+			&.areaLeft {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+
+			> button.showMore {
+				all: unset;
+				position: absolute;
+				right: 3.5rem;
+				bottom: 12vh;
+				display: block;
+				width: 2rem;
+				height: 2rem;
+				background-color: #8882;
+				background-image: url('@/assets/icons/query_stats.svg');
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				border-radius: 50%;
+				cursor: pointer;
+			}
 		}
 
 		&.hirez {
@@ -293,6 +530,45 @@ main {
 				content: unset;
 			}
 		}
+	}
+}
+
+#charts {
+	grid-area: 1 / 2 / 2 / 4;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	height: 100%;
+	padding-bottom: 10px;
+	opacity: 0;
+	visibility: hidden;
+
+	&.shown {
+		opacity: 1;
+		visibility: visible;
+		transition: 0.2s ease opacity;
+	}
+
+	> .top,
+	> .bottom {
+		width: 100%;
+		background-color: #4441;
+		border-radius: 10px;
+
+		> div {
+			width: 100%;
+		}
+	}
+
+	> .top {
+		height: 40%;
+	}
+
+	> .bottom {
+		height: 25%;
 	}
 }
 

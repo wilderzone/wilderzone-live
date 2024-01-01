@@ -1068,10 +1068,10 @@ footer img{
   transform: rotateZ(-30deg) rotateY(180deg);
 }
 .holiday_valentines{
-  color: violet;
+  color: #eda6ed;
 }
 .holiday_valentines + p{
-  color: violet;
+  color: #eda6ed;
 }
 .holiday_valentines::before{
   content: "";
